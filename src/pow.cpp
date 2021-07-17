@@ -7,7 +7,6 @@
 #include <cmath>
 #include "auxpow.h"
 #include "arith_uint256.h"
-#include "bignum.h"
 #include "chain.h"
 #include "dogecoin.h"
 #include "primitives/block.h"
