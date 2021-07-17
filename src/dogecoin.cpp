@@ -12,78 +12,51 @@
 #include "util.h"
 #include "validation.h"
 
-int static generateMTRandom(unsigned int s, int range)
-{
-    boost::mt19937 gen(s);
-    boost::uniform_int<> dist(1, range);
-    return dist(gen);
-}
-
-// Dogecoin: Normally minimum difficulty blocks can only occur in between
-// retarget blocks. However, once we introduce Digishield every block is
-// a retarget, so we need to handle minimum difficulty on all blocks.
-bool AllowDigishieldMinDifficultyForBlock(const CBlockIndex* pindexLast, const CBlockHeader *pblock, const Consensus::Params& params)
-{
-    // check if the chain allows minimum difficulty blocks
-    if (!params.fPowAllowMinDifficultyBlocks)
-        return false;
-
-    // check if the chain allows minimum difficulty blocks on recalc blocks
-    if (pindexLast->nHeight < 157500)
-    // if (!params.fPowAllowDigishieldMinDifficultyBlocks)
-        return false;
-
-    // Allow for a minimum block time if the elapsed time > 2*nTargetSpacing
-    return (pblock->GetBlockTime() > pindexLast->GetBlockTime() + params.nPowTargetSpacing*2);
-}
 
 unsigned int CalculateDogecoinNextWorkRequired(const CBlockIndex* pindexLast, int64_t nFirstBlockTime, const Consensus::Params& params)
 {
-    int nHeight = pindexLast->nHeight + 1;
-    const int64_t retargetTimespan = params.nPowTargetTimespan;
-    const int64_t nActualTimespan = pindexLast->GetBlockTime() - nFirstBlockTime;
-    int64_t nModulatedTimespan = nActualTimespan;
-    int64_t nMaxTimespan;
-    int64_t nMinTimespan;
+int nHeight = pindexLast->nHeight + 1;  
+int64_t nActualTimespan = pindexLast->GetBlockTime() - nFirstBlockTime;
+int64_t nReTargetHistoryFact = 6;
+int64_t nTargetTimespan = 15 * 60; // NyanCoin: 3 hours
 
-    if (params.fDigishieldDifficultyCalculation) //DigiShield implementation - thanks to RealSolid & WDC for this code
-    {
-        // amplitude filter - thanks to daft27 for this code
-        nModulatedTimespan = retargetTimespan + (nModulatedTimespan - retargetTimespan) / 8;
-
-        nMinTimespan = retargetTimespan - (retargetTimespan / 4);
-        nMaxTimespan = retargetTimespan + (retargetTimespan / 2);
-    } else if (nHeight > 10000) {
-        nMinTimespan = retargetTimespan / 4;
-        nMaxTimespan = retargetTimespan * 4;
-    } else if (nHeight > 5000) {
-        nMinTimespan = retargetTimespan / 8;
-        nMaxTimespan = retargetTimespan * 4;
+        if (pindexLast->nHeight >= 7770000) {
+        nReTargetHistoryFact = 2;
+        nTargetTimespan = 15 * 60;
+    } else if (pindexLast->nHeight >= 7331700) {
+        nReTargetHistoryFact = 6;
+        nTargetTimespan = 5 * 60 * 60;
     } else {
-        nMinTimespan = retargetTimespan / 16;
-        nMaxTimespan = retargetTimespan * 4;
+        nReTargetHistoryFact = 2;
+        nTargetTimespan = 60 * 6;
     }
 
-    // Limit adjustment step
-    if (nModulatedTimespan < nMinTimespan)
-        nModulatedTimespan = nMinTimespan;
-    else if (nModulatedTimespan > nMaxTimespan)
-        nModulatedTimespan = nMaxTimespan;
-
+   if (pindexLast->nHeight > 15000)
+        // obtain average actual timespan
+        nActualTimespan = (pindexLast->GetBlockTime() - nFirstBlockTime)/nReTargetHistoryFact;
+    else
+        nActualTimespan = pindexLast->GetBlockTime() - nFirstBlockTime;
+    
+    if (nActualTimespan < nTargetTimespan/4)
+        nActualTimespan = nTargetTimespan/4;
+    if (nActualTimespan > nTargetTimespan*4)
+        nActualTimespan = nTargetTimespan*4;
+	
     // Retarget
-    const arith_uint256 bnPowLimit = UintToArith256(params.powLimit);
     arith_uint256 bnNew;
-    arith_uint256 bnOld;
     bnNew.SetCompact(pindexLast->nBits);
-    bnOld = bnNew;
-    bnNew *= nModulatedTimespan;
-    bnNew /= retargetTimespan;
+    bnNew *= nActualTimespan;
+    bnNew /= nTargetTimespan;
+	
 
-    if (bnNew > bnPowLimit)
-        bnNew = bnPowLimit;
+const arith_uint256 bnPowLimit = UintToArith256(params.powLimit);
+if (bnNew > bnPowLimit)
+    bnNew = bnPowLimit;
 
-    return bnNew.GetCompact();
+
+return bnNew.GetCompact();
 }
+
 
 bool CheckAuxPowProofOfWork(const CBlockHeader& block, const Consensus::Params& params)
 {
@@ -124,26 +97,14 @@ bool CheckAuxPowProofOfWork(const CBlockHeader& block, const Consensus::Params& 
 
 CAmount GetDogecoinBlockSubsidy(int nHeight, const Consensus::Params& consensusParams, uint256 prevHash)
 {
-    int halvings = nHeight / consensusParams.nSubsidyHalvingInterval;
+    
+    CAmount nSubsidy = 0.009595 * COIN; 
+   
+    // Subsidy is cut in half every 210,000 blocks which will occur approximately every 4 years.
+    nSubsidy >>= (nHeight / 5959595);
+    return nSubsidy;
+    
 
-    if (!consensusParams.fSimplifiedRewards)
-    {
-        // Old-style rewards derived from the previous block hash
-        const std::string cseed_str = prevHash.ToString().substr(7, 7);
-        const char* cseed = cseed_str.c_str();
-        char* endp = NULL;
-        long seed = strtol(cseed, &endp, 16);
-        CAmount maxReward = (1000000 >> halvings) - 1;
-        int rand = generateMTRandom(seed, maxReward);
-
-        return (1 + rand) * COIN;
-    } else if (nHeight < (6 * consensusParams.nSubsidyHalvingInterval)) {
-        // New-style constant rewards for each halving interval
-        return (500000 * COIN) >> halvings;
-    } else {
-        // Constant inflation
-        return 10000 * COIN;
-    }
 }
 
 CAmount GetDogecoinMinRelayFee(const CTransaction& tx, unsigned int nBytes, bool fAllowFree)
