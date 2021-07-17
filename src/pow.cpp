@@ -4,30 +4,15 @@
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #include "pow.h"
-
+#include <cmath>
 #include "auxpow.h"
 #include "arith_uint256.h"
+#include "bignum.h"
 #include "chain.h"
 #include "dogecoin.h"
 #include "primitives/block.h"
 #include "uint256.h"
 #include "util.h"
-
-// Determine if the for the given block, a min difficulty setting applies
-bool AllowMinDifficultyForBlock(const CBlockIndex* pindexLast, const CBlockHeader *pblock, const Consensus::Params& params)
-{
-    // check if the chain allows minimum difficulty blocks
-    if (!params.fPowAllowMinDifficultyBlocks)
-        return false;
-
-    // Dogecoin: Magic number at which reset protocol switches
-    // check if we allow minimum difficulty at this block-height
-    if (pindexLast->nHeight < 157500)
-        return false;
-
-    // Allow for a minimum block time if the elapsed time > 2*nTargetSpacing
-    return (pblock->GetBlockTime() > pindexLast->GetBlockTime() + params.nPowTargetSpacing*2);
-}
 
 unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHeader *pblock, const Consensus::Params& params)
 {
@@ -37,47 +22,61 @@ unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHead
     if (pindexLast == NULL)
         return nProofOfWorkLimit;
 
-    // Dogecoin: Special rules for minimum difficulty blocks with Digishield
-    if (AllowDigishieldMinDifficultyForBlock(pindexLast, pblock, params))
-    {
-        // Special difficulty rule for testnet:
-        // If the new block's timestamp is more than 2* nTargetSpacing minutes
-        // then allow mining of a min-difficulty block.
-        return nProofOfWorkLimit;
+    int64_t nTargetTimespan = 60 * 6;
+    int64_t nTargetSpacing = 3;
+    int64_t nInterval = nTargetTimespan / nTargetSpacing;	
+    int64_t nReTargetHistoryFact = 2;
+
+	
+     if (pindexLast->nHeight >= 7770000) {
+    nTargetTimespan = 15 * 60; 
+    nTargetSpacing = 9; 
+    nInterval = nTargetTimespan / nTargetSpacing;
+    nReTargetHistoryFact = 2;  
+    } else if (pindexLast->nHeight >= 7331700) {
+    nTargetTimespan = 5 * 60 * 60; 
+    nTargetSpacing = 9; 
+    nInterval = nTargetTimespan / nTargetSpacing;
+    nReTargetHistoryFact = 6;
+    } else {
+    nTargetTimespan = 60 * 6; // prux:
+    nTargetSpacing = 3; // prux:
+    nInterval = nTargetTimespan / nTargetSpacing;
+    nReTargetHistoryFact = 2;
     }
 
-    // Only change once per difficulty adjustment interval
-    bool fNewDifficultyProtocol = (pindexLast->nHeight >= 145000);
-    const int64_t difficultyAdjustmentInterval = fNewDifficultyProtocol
-                                                 ? 1
-                                                 : params.DifficultyAdjustmentInterval();
-    if ((pindexLast->nHeight+1) % difficultyAdjustmentInterval != 0)
+
+    // Only change once per interval
+    if ((pindexLast->nHeight+1) % nInterval != 0)
     {
+        // Special difficulty rule for testnet:
         if (params.fPowAllowMinDifficultyBlocks)
         {
-            // Special difficulty rule for testnet:
             // If the new block's timestamp is more than 2* 10 minutes
             // then allow mining of a min-difficulty block.
-            if (pblock->GetBlockTime() > pindexLast->GetBlockTime() + params.nPowTargetSpacing*2)
+            if (pblock->nTime > pindexLast->nTime + nTargetSpacing*2)
                 return nProofOfWorkLimit;
             else
             {
                 // Return the last non-special-min-difficulty-rules-block
                 const CBlockIndex* pindex = pindexLast;
-                while (pindex->pprev && pindex->nHeight % params.DifficultyAdjustmentInterval() != 0 && pindex->nBits == nProofOfWorkLimit)
+                while (pindex->pprev && pindex->nHeight % nInterval != 0 && pindex->nBits == nProofOfWorkLimit)
                     pindex = pindex->pprev;
                 return pindex->nBits;
             }
         }
+		
         return pindexLast->nBits;
     }
-
-    // Litecoin: This fixes an issue where a 51% attack can change difficulty at will.
+	
+    // Fastcoin: This fixes an issue where a 51% attack can change difficulty at will.
     // Go back the full period unless it's the first retarget after genesis. Code courtesy of Art Forz
-    int blockstogoback = difficultyAdjustmentInterval-1;
-    if ((pindexLast->nHeight+1) != difficultyAdjustmentInterval)
-        blockstogoback = difficultyAdjustmentInterval;
-
+    int blockstogoback = nInterval-1;
+    if ((pindexLast->nHeight+1) != nInterval)
+        blockstogoback = nInterval;
+    if (pindexLast->nHeight > 15000) 
+        blockstogoback = nReTargetHistoryFact * nInterval;
+	
     // Go back by what we want to be 14 days worth of blocks
     int nHeightFirst = pindexLast->nHeight - blockstogoback;
     assert(nHeightFirst >= 0);
@@ -89,27 +88,46 @@ unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHead
 
 unsigned int CalculateNextWorkRequired(const CBlockIndex* pindexLast, int64_t nFirstBlockTime, const Consensus::Params& params)
 {
-    if (params.fPowNoRetargeting)
-        return pindexLast->nBits;
 
-    // Limit adjustment step
-    int64_t nActualTimespan = pindexLast->GetBlockTime() - nFirstBlockTime;
-    if (nActualTimespan < params.nPowTargetTimespan/4)
-        nActualTimespan = params.nPowTargetTimespan/4;
-    if (nActualTimespan > params.nPowTargetTimespan*4)
-        nActualTimespan = params.nPowTargetTimespan*4;
+int64_t nActualTimespan = pindexLast->GetBlockTime() - nFirstBlockTime;
+int64_t nReTargetHistoryFact = 6;
+int64_t nTargetTimespan = 15 * 60; // NyanCoin: 3 hours
 
+        if (pindexLast->nHeight >= 7770000) {
+        nReTargetHistoryFact = 2;
+        nTargetTimespan = 15 * 60;
+    } else if (pindexLast->nHeight >= 7331700) {
+        nReTargetHistoryFact = 6;
+        nTargetTimespan = 5 * 60 * 60;
+    } else {
+        nReTargetHistoryFact = 2;
+        nTargetTimespan = 60 * 6;
+    }
+
+   if (pindexLast->nHeight > 15000)
+        // obtain average actual timespan
+        nActualTimespan = (pindexLast->GetBlockTime() - nFirstBlockTime)/nReTargetHistoryFact;
+    else
+        nActualTimespan = pindexLast->GetBlockTime() - nFirstBlockTime;
+    
+    if (nActualTimespan < nTargetTimespan/4)
+        nActualTimespan = nTargetTimespan/4;
+    if (nActualTimespan > nTargetTimespan*4)
+        nActualTimespan = nTargetTimespan*4;
+	
     // Retarget
-    const arith_uint256 bnPowLimit = UintToArith256(params.powLimit);
     arith_uint256 bnNew;
     bnNew.SetCompact(pindexLast->nBits);
     bnNew *= nActualTimespan;
-    bnNew /= params.nPowTargetTimespan;
+    bnNew /= nTargetTimespan;
+	
 
-    if (bnNew > bnPowLimit)
-        bnNew = bnPowLimit;
+const arith_uint256 bnPowLimit = UintToArith256(params.powLimit);
+if (bnNew > bnPowLimit)
+    bnNew = bnPowLimit;
 
-    return bnNew.GetCompact();
+
+return bnNew.GetCompact();
 }
 
 bool CheckProofOfWork(uint256 hash, unsigned int nBits, const Consensus::Params& params)
