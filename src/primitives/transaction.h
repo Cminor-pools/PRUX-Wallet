@@ -178,7 +178,7 @@ public:
         if (scriptPubKey.IsUnspendable())
             return 0;
 
-        /*
+        
         size_t nSize = GetSerializeSize(*this, SER_DISK, 0);
         int witnessversion = 0;
         std::vector<unsigned char> witnessprogram;
@@ -192,7 +192,7 @@ public:
         }
 
         return 3 * minRelayTxFee.GetFee(nSize);
-        */
+        
         
         return std::max(COIN, 3 * minRelayTxFee.GetFee(nSize));
     }
