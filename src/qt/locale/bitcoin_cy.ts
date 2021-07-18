@@ -52,13 +52,13 @@
     <name>BanTableModel</name>
     </context>
 <context>
-    <name>DogecoinGUI</name>
+    <name>PruxGUI</name>
     <message>
         <source>Synchronizing with network...</source>
         <translation>Cysoni â'r rhwydwaith...</translation>
     </message>
     <message>
-        <source>&amp;Wow</source>
+        <source>&amp;YAY</source>
         <translation>&amp;Trosolwg</translation>
     </message>
     <message>
@@ -114,19 +114,19 @@
         <translation>Newid y cyfrinymadrodd a ddefnyddiwyd ar gyfer amgryptio'r waled</translation>
     </message>
     <message>
-        <source>Dogecoin</source>
-        <translation>Dogecoin</translation>
+        <source>Prux</source>
+        <translation>Prux</translation>
     </message>
     <message>
         <source>Wallet</source>
         <translation>Waled</translation>
     </message>
     <message>
-        <source>&amp;Such Send</source>
+        <source>&amp;PRUX Send</source>
         <translation>&amp;Anfon</translation>
     </message>
     <message>
-        <source>&amp;Much Receive</source>
+        <source>&amp;PRUX Receive</source>
         <translation>&amp;Derbyn</translation>
     </message>
     <message>
@@ -478,14 +478,14 @@
     <name>WalletView</name>
     </context>
 <context>
-    <name>dogecoin-core</name>
+    <name>prux-core</name>
     <message>
         <source>Options:</source>
         <translation>Opsiynau:</translation>
     </message>
     <message>
-        <source>Dogecoin Core</source>
-        <translation>Craidd Dogecoin</translation>
+        <source>Prux Core</source>
+        <translation>Craidd Prux</translation>
     </message>
     <message>
         <source>Information</source>

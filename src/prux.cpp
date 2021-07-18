@@ -1,4 +1,4 @@
-// Copyright (c) 2015 The Dogecoin Core developers
+// Copyright (c) 2015 The Prux Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -7,13 +7,13 @@
 
 #include "policy/policy.h"
 #include "arith_uint256.h"
-#include "dogecoin.h"
+#include "prux.h"
 #include "txmempool.h"
 #include "util.h"
 #include "validation.h"
 
 
-unsigned int CalculateDogecoinNextWorkRequired(const CBlockIndex* pindexLast, int64_t nFirstBlockTime, const Consensus::Params& params)
+unsigned int CalculatePruxNextWorkRequired(const CBlockIndex* pindexLast, int64_t nFirstBlockTime, const Consensus::Params& params)
 {
 int nHeight = pindexLast->nHeight + 1;  
 int64_t nActualTimespan = pindexLast->GetBlockTime() - nFirstBlockTime;
@@ -95,7 +95,7 @@ bool CheckAuxPowProofOfWork(const CBlockHeader& block, const Consensus::Params& 
     return true;
 }
 
-CAmount GetDogecoinBlockSubsidy(int nHeight, const Consensus::Params& consensusParams, uint256 prevHash)
+CAmount GetPruxBlockSubsidy(int nHeight, const Consensus::Params& consensusParams, uint256 prevHash)
 {
     
     CAmount nSubsidy = 0.009595 * COIN; 
@@ -107,7 +107,7 @@ CAmount GetDogecoinBlockSubsidy(int nHeight, const Consensus::Params& consensusP
 
 }
 
-CAmount GetDogecoinMinRelayFee(const CTransaction& tx, unsigned int nBytes, bool fAllowFree)
+CAmount GetPruxMinRelayFee(const CTransaction& tx, unsigned int nBytes, bool fAllowFree)
 {
     {
         LOCK(mempool.cs);
@@ -120,7 +120,7 @@ CAmount GetDogecoinMinRelayFee(const CTransaction& tx, unsigned int nBytes, bool
     }
 
     CAmount nMinFee = ::minRelayTxFee.GetFee(nBytes);
-    nMinFee += GetDogecoinDustFee(tx.vout, ::minRelayTxFee);
+    nMinFee += GetPruxDustFee(tx.vout, ::minRelayTxFee);
 
     if (fAllowFree)
     {
@@ -137,7 +137,7 @@ CAmount GetDogecoinMinRelayFee(const CTransaction& tx, unsigned int nBytes, bool
     return nMinFee;
 }
 
-CAmount GetDogecoinDustFee(const std::vector<CTxOut> &vout, CFeeRate &baseFeeRate) {
+CAmount GetPruxDustFee(const std::vector<CTxOut> &vout, CFeeRate &baseFeeRate) {
     CAmount nFee = 0;
 
     // To limit dust spam, add base fee for each output less than a COIN

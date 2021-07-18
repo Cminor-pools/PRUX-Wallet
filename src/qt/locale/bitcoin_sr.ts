@@ -76,13 +76,13 @@
     <name>BanTableModel</name>
     </context>
 <context>
-    <name>DogecoinGUI</name>
+    <name>PruxGUI</name>
     <message>
         <source>Synchronizing with network...</source>
         <translation>Синхронизација са мрежом у току...</translation>
     </message>
     <message>
-        <source>&amp;Wow</source>
+        <source>&amp;YAY</source>
         <translation>&amp;Општи преглед</translation>
     </message>
     <message>
@@ -130,8 +130,8 @@
         <translation>Промени &amp;лозинку...</translation>
     </message>
     <message>
-        <source>Send coins to a Dogecoin address</source>
-        <translation>Пошаљите новац на dogecoin адресу</translation>
+        <source>Send coins to a Prux address</source>
+        <translation>Пошаљите новац на prux адресу</translation>
     </message>
     <message>
         <source>Change the passphrase used for wallet encryption</source>
@@ -142,7 +142,7 @@
         <translation>новчаник</translation>
     </message>
     <message>
-        <source>&amp;Such Send</source>
+        <source>&amp;PRUX Send</source>
         <translation>&amp;Пошаљи</translation>
     </message>
     <message>
@@ -442,7 +442,7 @@
     <name>WalletView</name>
     </context>
 <context>
-    <name>dogecoin-core</name>
+    <name>prux-core</name>
     <message>
         <source>Options:</source>
         <translation>Opcije</translation>

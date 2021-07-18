@@ -62,12 +62,12 @@
         <translation>Ontvanger adresse</translation>
     </message>
     <message>
-        <source>These are your Dogecoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>Hierdie is die adresse vanwaar u Dogecoin betalings stuur. U moet altyd die bedrag en die adres van die ontvanger nagaan voordat u enige munte stuur.</translation>
+        <source>These are your Prux addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>Hierdie is die adresse vanwaar u Prux betalings stuur. U moet altyd die bedrag en die adres van die ontvanger nagaan voordat u enige munte stuur.</translation>
     </message>
     <message>
-        <source>These are your Dogecoin addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
-        <translation>Hierdie is die adresse waar u Dogecoins sal ontvang. Ons beveel aan dat u 'n nuwe adres kies vir elke transaksie</translation>
+        <source>These are your Prux addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <translation>Hierdie is die adresse waar u Pruxs sal ontvang. Ons beveel aan dat u 'n nuwe adres kies vir elke transaksie</translation>
     </message>
     <message>
         <source>&amp;Copy Address</source>
@@ -168,8 +168,8 @@
         <translation>Bevestig dat die beursie gekodifiseer is</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR DOGECOINS&lt;/b&gt;!</source>
-        <translation>Waarskuwing: Indien u die beursie kodifiseer en u vergeet u wagwoord &lt;b&gt;VERLOOR U AL U DOGECOINS&lt;/b&gt;!</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR PRUXCOINS&lt;/b&gt;!</source>
+        <translation>Waarskuwing: Indien u die beursie kodifiseer en u vergeet u wagwoord &lt;b&gt;VERLOOR U AL U PRUXCOINS&lt;/b&gt;!</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
@@ -228,7 +228,7 @@
     </message>
 </context>
 <context>
-    <name>DogecoinGUI</name>
+    <name>PruxGUI</name>
     <message>
         <source>Sign &amp;message...</source>
         <translation>Teken &amp;boodskap...</translation>
@@ -238,7 +238,7 @@
         <translation>Netwerk-sinkronisasie...</translation>
     </message>
     <message>
-        <source>&amp;Wow</source>
+        <source>&amp;YAY</source>
         <translation>&amp;Oorsig</translation>
     </message>
     <message>
@@ -330,8 +330,8 @@
         <translation>Besig met herindeksering van blokke op hardeskyf...</translation>
     </message>
     <message>
-        <source>Send coins to a Dogecoin address</source>
-        <translation>Stuur munte na 'n Dogecoin adres</translation>
+        <source>Send coins to a Prux address</source>
+        <translation>Stuur munte na 'n Prux adres</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -350,19 +350,19 @@
         <translation>Maak ontfouting en diagnostiese konsole oop</translation>
     </message>
     <message>
-        <source>Dogecoin</source>
-        <translation>Dogecoin</translation>
+        <source>Prux</source>
+        <translation>Prux</translation>
     </message>
     <message>
         <source>Wallet</source>
         <translation>Beursie</translation>
     </message>
     <message>
-        <source>&amp;Such Send</source>
+        <source>&amp;PRUX Send</source>
         <translation>&amp;Stuur</translation>
     </message>
     <message>
-        <source>&amp;Much Receive</source>
+        <source>&amp;PRUX Receive</source>
         <translation>&amp;Ontvang</translation>
     </message>
     <message>
@@ -378,12 +378,12 @@
         <translation>Kodifiseer die private sleutes wat aan jou beursie gekoppel is.</translation>
     </message>
     <message>
-        <source>Sign messages with your Dogecoin addresses to prove you own them</source>
-        <translation>Onderteken boodskappe met u Dogecoin adresse om u eienaarskap te bewys</translation>
+        <source>Sign messages with your Prux addresses to prove you own them</source>
+        <translation>Onderteken boodskappe met u Prux adresse om u eienaarskap te bewys</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Dogecoin addresses</source>
-        <translation>Verifieër boodskappe om seker te maak dat dit met die gespesifiseerde Dogecoin adresse</translation>
+        <source>Verify messages to ensure they were signed with specified Prux addresses</source>
+        <translation>Verifieër boodskappe om seker te maak dat dit met die gespesifiseerde Prux adresse</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -398,8 +398,8 @@
         <translation>Orebalk</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and dogecoin: URIs)</source>
-        <translation>Versoek betalings (genereer QR-kodes en dogecoin: URI's)</translation>
+        <source>Request payments (generates QR codes and prux: URIs)</source>
+        <translation>Versoek betalings (genereer QR-kodes en prux: URI's)</translation>
     </message>
     <message>
         <source>Show the list of used sending addresses and labels</source>
@@ -410,8 +410,8 @@
         <translation>Vertoon die lys van gebruikte ontvangers-adresse en etikette</translation>
     </message>
     <message>
-        <source>Open a dogecoin: URI or payment request</source>
-        <translation>Skep 'n dogecoin: URI of betalingsversoek</translation>
+        <source>Open a prux: URI or payment request</source>
+        <translation>Skep 'n prux: URI of betalingsversoek</translation>
     </message>
     <message>
         <source>Indexing blocks on disk...</source>
@@ -946,10 +946,10 @@
     </message>
     </context>
 <context>
-    <name>dogecoin-core</name>
+    <name>prux-core</name>
     <message>
-        <source>Dogecoin Core</source>
-        <translation>Dogecoin Kern</translation>
+        <source>Prux Core</source>
+        <translation>Prux Kern</translation>
     </message>
     <message>
         <source>Information</source>

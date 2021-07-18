@@ -40,9 +40,9 @@
     <name>BanTableModel</name>
     </context>
 <context>
-    <name>DogecoinGUI</name>
+    <name>PruxGUI</name>
     <message>
-        <source>&amp;Such Send</source>
+        <source>&amp;PRUX Send</source>
         <translation>&amp;ناردن</translation>
     </message>
     <message>
@@ -374,7 +374,7 @@
     </message>
     </context>
 <context>
-    <name>dogecoin-core</name>
+    <name>prux-core</name>
     <message>
         <source>Options:</source>
         <translation>هەڵبژاردنەکان:</translation>

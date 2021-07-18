@@ -1,2 +1,2 @@
-usr/local/bin/dogecoind usr/bin
-usr/local/bin/dogecoin-cli usr/bin
+usr/local/bin/pruxd usr/bin
+usr/local/bin/prux-cli usr/bin

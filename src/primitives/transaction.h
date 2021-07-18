@@ -194,7 +194,7 @@ public:
         return 3 * minRelayTxFee.GetFee(nSize);
         
         
-        return std::max(COIN, 3 * minRelayTxFee.GetFee(nSize));
+        return std::max(CENT, 3 * minRelayTxFee.GetFee(nSize));
     }
 
     bool IsDust(const CFeeRate &minRelayTxFee) const
@@ -307,7 +307,7 @@ class CTransaction
 {
 public:
     // Default transaction version.
-    // Dogecoin: Temporarily restricted to v1 for compatibility with 1.10
+    // Prux: Temporarily restricted to v1 for compatibility with 1.10
     static const int32_t CURRENT_VERSION=1;
 
     // Changing the default transaction version requires a two step process: first

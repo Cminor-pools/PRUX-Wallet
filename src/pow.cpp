@@ -8,7 +8,7 @@
 #include "auxpow.h"
 #include "arith_uint256.h"
 #include "chain.h"
-#include "dogecoin.h"
+#include "prux.h"
 #include "primitives/block.h"
 #include "uint256.h"
 #include "util.h"
@@ -82,7 +82,7 @@ unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHead
     const CBlockIndex* pindexFirst = pindexLast->GetAncestor(nHeightFirst);
     assert(pindexFirst);
 
-    return CalculateDogecoinNextWorkRequired(pindexLast, pindexFirst->GetBlockTime(), params);
+    return CalculatePruxNextWorkRequired(pindexLast, pindexFirst->GetBlockTime(), params);
 }
 
 unsigned int CalculateNextWorkRequired(const CBlockIndex* pindexLast, int64_t nFirstBlockTime, const Consensus::Params& params)

@@ -64,7 +64,7 @@
     <name>BanTableModel</name>
     </context>
 <context>
-    <name>DogecoinGUI</name>
+    <name>PruxGUI</name>
     <message>
         <source>Sign &amp;message...</source>
         <translation>Потпиши &amp;порака...</translation>
@@ -74,7 +74,7 @@
         <translation>Синхронизација со мрежата...</translation>
     </message>
     <message>
-        <source>&amp;Wow</source>
+        <source>&amp;YAY</source>
         <translation>&amp;Преглед</translation>
     </message>
     <message>
@@ -138,7 +138,7 @@
         <translation>Повторно индексирање на блокови од дискот...</translation>
     </message>
     <message>
-        <source>Send coins to a Dogecoin address</source>
+        <source>Send coins to a Prux address</source>
         <translation>Испрати биткоини на Биткоин адреса</translation>
     </message>
     <message>
@@ -146,7 +146,7 @@
         <translation>&amp;Потврди порака...</translation>
     </message>
     <message>
-        <source>Dogecoin</source>
+        <source>Prux</source>
         <translation>Биткоин</translation>
     </message>
     <message>
@@ -154,11 +154,11 @@
         <translation>Паричник</translation>
     </message>
     <message>
-        <source>&amp;Such Send</source>
+        <source>&amp;PRUX Send</source>
         <translation>&amp;Испрати</translation>
     </message>
     <message>
-        <source>&amp;Much Receive</source>
+        <source>&amp;PRUX Receive</source>
         <translation>&amp;Прими</translation>
     </message>
     <message>
@@ -572,13 +572,13 @@
     <name>WalletView</name>
     </context>
 <context>
-    <name>dogecoin-core</name>
+    <name>prux-core</name>
     <message>
         <source>Options:</source>
         <translation>Опции:</translation>
     </message>
     <message>
-        <source>Dogecoin Core</source>
+        <source>Prux Core</source>
         <translation>Биткоин Core</translation>
     </message>
     <message>

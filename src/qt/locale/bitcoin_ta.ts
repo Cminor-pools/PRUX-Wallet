@@ -52,9 +52,9 @@
     </message>
     </context>
 <context>
-    <name>DogecoinGUI</name>
+    <name>PruxGUI</name>
     <message>
-        <source>&amp;Wow</source>
+        <source>&amp;YAY</source>
         <translation>&amp;கண்ணோட்டம்</translation>
     </message>
     <message>
@@ -90,19 +90,19 @@
         <translation>&amp;செய்தியை சரிசெய்...</translation>
     </message>
     <message>
-        <source>Dogecoin</source>
-        <translation>Dogecoin</translation>
+        <source>Prux</source>
+        <translation>Prux</translation>
     </message>
     <message>
         <source>Wallet</source>
         <translation>பணப்பை</translation>
     </message>
     <message>
-        <source>&amp;Such Send</source>
+        <source>&amp;PRUX Send</source>
         <translation>&amp;அனுப்பு</translation>
     </message>
     <message>
-        <source>&amp;Much Receive</source>
+        <source>&amp;PRUX Receive</source>
         <translation>&amp;பெறு</translation>
     </message>
     <message>
@@ -706,10 +706,10 @@
     <name>WalletView</name>
     </context>
 <context>
-    <name>dogecoin-core</name>
+    <name>prux-core</name>
     <message>
-        <source>Dogecoin Core</source>
-        <translation>Dogecoin மையம்</translation>
+        <source>Prux Core</source>
+        <translation>Prux மையம்</translation>
     </message>
     <message>
         <source>(default: %u)</source>

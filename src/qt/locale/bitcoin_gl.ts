@@ -64,7 +64,7 @@
     <name>BanTableModel</name>
     </context>
 <context>
-    <name>DogecoinGUI</name>
+    <name>PruxGUI</name>
     <message>
         <source>Sign &amp;message...</source>
         <translation>&amp;Asinar mensaxe...</translation>
@@ -74,7 +74,7 @@
         <translation>Sincronizando coa rede...</translation>
     </message>
     <message>
-        <source>&amp;Wow</source>
+        <source>&amp;YAY</source>
         <translation>&amp;Vista xeral</translation>
     </message>
     <message>
@@ -130,8 +130,8 @@
         <translation>Reindexando bloques no disco...</translation>
     </message>
     <message>
-        <source>Send coins to a Dogecoin address</source>
-        <translation>Enviar moedas a unha dirección Dogecoin</translation>
+        <source>Send coins to a Prux address</source>
+        <translation>Enviar moedas a unha dirección Prux</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -154,19 +154,19 @@
         <translation>&amp;Verificar mensaxe...</translation>
     </message>
     <message>
-        <source>Dogecoin</source>
-        <translation>Dogecoin</translation>
+        <source>Prux</source>
+        <translation>Prux</translation>
     </message>
     <message>
         <source>Wallet</source>
         <translation>Moedeiro</translation>
     </message>
     <message>
-        <source>&amp;Such Send</source>
+        <source>&amp;PRUX Send</source>
         <translation>&amp;Enviar</translation>
     </message>
     <message>
-        <source>&amp;Much Receive</source>
+        <source>&amp;PRUX Receive</source>
         <translation>&amp;Recibir</translation>
     </message>
     <message>
@@ -182,12 +182,12 @@
         <translation>Encriptar as claves privadas que pertencen ao teu moedeiro</translation>
     </message>
     <message>
-        <source>Sign messages with your Dogecoin addresses to prove you own them</source>
-        <translation>Asina mensaxes coas túas direccións Dogecoin para probar que te pertencen</translation>
+        <source>Sign messages with your Prux addresses to prove you own them</source>
+        <translation>Asina mensaxes coas túas direccións Prux para probar que te pertencen</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Dogecoin addresses</source>
-        <translation>Verificar mensaxes para asegurar que foron asinados con direccións Dogecoin dadas.</translation>
+        <source>Verify messages to ensure they were signed with specified Prux addresses</source>
+        <translation>Verificar mensaxes para asegurar que foron asinados con direccións Prux dadas.</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -206,8 +206,8 @@
         <translation>Barra de ferramentas</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and dogecoin: URIs)</source>
-        <translation>Solicitar pagos (xenera códigos QR e dogecoin: URIs)</translation>
+        <source>Request payments (generates QR codes and prux: URIs)</source>
+        <translation>Solicitar pagos (xenera códigos QR e prux: URIs)</translation>
     </message>
     <message>
         <source>Show the list of used sending addresses and labels</source>
@@ -218,8 +218,8 @@
         <translation>Amosar a listaxe de etiquetas e direccións para recibir empregadas</translation>
     </message>
     <message>
-        <source>Open a dogecoin: URI or payment request</source>
-        <translation>Abrir un dogecoin: URI ou solicitude de pago</translation>
+        <source>Open a prux: URI or payment request</source>
+        <translation>Abrir un prux: URI ou solicitude de pago</translation>
     </message>
     <message>
         <source>&amp;Command-line options</source>
@@ -466,8 +466,8 @@
         <translation>Moedeiro</translation>
     </message>
     <message>
-        <source>Automatically open the Dogecoin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Abrir automáticamente o porto do cliente Dogecoin no router. Esto so funciona se o teu router soporta UPnP e está habilitado.</translation>
+        <source>Automatically open the Prux client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Abrir automáticamente o porto do cliente Prux no router. Esto so funciona se o teu router soporta UPnP e está habilitado.</translation>
     </message>
     <message>
         <source>Map port using &amp;UPnP</source>
@@ -545,8 +545,8 @@
         <translation>Formulario</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Dogecoin network after a connection is established, but this process has not completed yet.</source>
-        <translation>A información amosada por estar desactualizada. O teu moedeiro sincronízase automáticamente coa rede Dogecoin despois de que se estableza unha conexión, pero este proceso non está todavía rematado.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Prux network after a connection is established, but this process has not completed yet.</source>
+        <translation>A información amosada por estar desactualizada. O teu moedeiro sincronízase automáticamente coa rede Prux despois de que se estableza unha conexión, pero este proceso non está todavía rematado.</translation>
     </message>
     <message>
         <source>Your current spendable balance</source>
@@ -927,8 +927,8 @@
         <translation>Copiar a sinatura actual ao portapapeis do sistema</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this Dogecoin address</source>
-        <translation>Asina a mensaxe para probar que posees esta dirección Dogecoin</translation>
+        <source>Sign the message to prove you own this Prux address</source>
+        <translation>Asina a mensaxe para probar que posees esta dirección Prux</translation>
     </message>
     <message>
         <source>Sign &amp;Message</source>
@@ -947,8 +947,8 @@
         <translation>&amp;Verificar Mensaxe</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified Dogecoin address</source>
-        <translation>Verificar a mensaxe para asegurar que foi asinada coa dirección Dogecoin especificada</translation>
+        <source>Verify the message to ensure it was signed with the specified Prux address</source>
+        <translation>Verificar a mensaxe para asegurar que foi asinada coa dirección Prux especificada</translation>
     </message>
     <message>
         <source>Verify &amp;Message</source>
@@ -1002,7 +1002,7 @@
     <name>WalletView</name>
     </context>
 <context>
-    <name>dogecoin-core</name>
+    <name>prux-core</name>
     <message>
         <source>Options:</source>
         <translation>Opcións:</translation>
@@ -1028,8 +1028,8 @@
         <translation>Executar no fondo como un demo e aceptar comandos</translation>
     </message>
     <message>
-        <source>Dogecoin Core</source>
-        <translation>Core de Dogecoin</translation>
+        <source>Prux Core</source>
+        <translation>Core de Prux</translation>
     </message>
     <message>
         <source>Bind to given address and always listen on it. Use [host]:port notation for IPv6</source>

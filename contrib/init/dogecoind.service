@@ -1,15 +1,15 @@
 [Unit]
-Description=Dogecoin's distributed currency daemon
+Description=Prux's distributed currency daemon
 After=network.target
 
 [Service]
-User=dogecoin
-Group=dogecoin
+User=prux
+Group=prux
 
 Type=forking
-PIDFile=/var/lib/dogecoind/dogecoind.pid
-ExecStart=/usr/bin/dogecoind -daemon -pid=/var/lib/dogecoind/dogecoind.pid \
--conf=/etc/dogecoin/dogecoin.conf -datadir=/var/lib/dogecoind -disablewallet
+PIDFile=/var/lib/pruxd/pruxd.pid
+ExecStart=/usr/bin/pruxd -daemon -pid=/var/lib/pruxd/pruxd.pid \
+-conf=/etc/prux/prux.conf -datadir=/var/lib/pruxd -disablewallet
 
 Restart=always
 PrivateTmp=true
