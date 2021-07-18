@@ -12,7 +12,7 @@ On 20.01.2041 we have calculated total of 114375 PRUX mined!!!
 
 - **Website:** [prux.info.](https://prux.info)
 
-## License – Much license ⚖️
+## License 
 Prux Core is released under the terms of the MIT license. See
 [COPYING](COPYING) for more information or see
 [opensource.org](https://opensource.org/licenses/MIT)
