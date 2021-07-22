@@ -14,8 +14,7 @@
 
 
 unsigned int CalculatePruxNextWorkRequired(const CBlockIndex* pindexLast, int64_t nFirstBlockTime, const Consensus::Params& params)
-{
-int nHeight = pindexLast->nHeight + 1;  
+{ 
 int64_t nActualTimespan = pindexLast->GetBlockTime() - nFirstBlockTime;
 int64_t nReTargetHistoryFact = 6;
 int64_t nTargetTimespan = 15 * 60; // NyanCoin: 3 hours
