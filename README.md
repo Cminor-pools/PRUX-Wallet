@@ -1,6 +1,6 @@
 # Prux Core [PRUX]
 
-![Prux](https://ibb.co/MZYsWJF)
+![Prux](https://i.ibb.co/Nt8sQGc/prux-logo.png)
 
 PRUX-Coin is a Cryptocurrency (similar to Bitcoin or Litecoin) 
 but with very fast transaction time of 9 seconds!!! 
