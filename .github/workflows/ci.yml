@@ -175,5 +175,5 @@ jobs:
         with:
           name: PRUX-Wallet-${{ github.sha }}-${{ matrix.name }}
           path: |
-            depends/${{ matrix.host }}/bin/PRUX*
+            depends/${{ matrix.host }}/bin/PRUX-Wallet*
             dist/PRUX-Wallet-Qt.app
