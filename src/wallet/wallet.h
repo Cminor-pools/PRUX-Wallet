@@ -53,7 +53,7 @@ static const CAmount DEFAULT_TRANSACTION_MINFEE = 1;
 //! minimum recommended increment for BIP 125 replacement txs
 static const CAmount WALLET_INCREMENTAL_RELAY_FEE = 1;
 //! target minimum change amount
-static const CAmount MIN_CHANGE = CENT*0.000001;
+static const CAmount MIN_CHANGE = CENT;
 //! final minimum change amount after paying for fees
 static const CAmount MIN_FINAL_CHANGE = MIN_CHANGE/2;
 //! Default for -spendzeroconfchange
