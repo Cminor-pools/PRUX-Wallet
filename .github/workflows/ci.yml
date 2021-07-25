@@ -173,7 +173,7 @@ jobs:
       - name: Upload artifacts
         uses: actions/upload-artifact@v2
         with:
-          name: PRUX-Wallet-${{ github.sha }}-${{ matrix.name }}
+          name: prux-${{ github.sha }}-${{ matrix.name }}
           path: |
-            depends/${{ matrix.host }}/bin/PRUX-Wallet*
-            dist/PRUX-Wallet-Qt.app
+            depends/${{ matrix.host }}/bin/prux*
+            dist/prux-Qt.app
