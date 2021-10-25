@@ -1,6 +1,5 @@
 # List of fixed seed nodes for mainet
-
-# Onion nodes
 77.239.37.178
+# Onion nodes
 giwlcgcbmm47maje.onion
 
