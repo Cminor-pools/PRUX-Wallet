@@ -89,8 +89,8 @@ unsigned int CalculateNextWorkRequired(const CBlockIndex* pindexLast, int64_t nF
 {
 
 int64_t nActualTimespan = pindexLast->GetBlockTime() - nFirstBlockTime;
-int64_t nReTargetHistoryFact = 6;
-int64_t nTargetTimespan = 15 * 60; // NyanCoin: 3 hours
+int64_t nReTargetHistoryFact = 2;
+int64_t nTargetTimespan = 60 * 6; // PruxCoin: 1 hours
 
         if (pindexLast->nHeight >= 7770000) {
         nReTargetHistoryFact = 2;
