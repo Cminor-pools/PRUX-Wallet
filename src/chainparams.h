@@ -82,6 +82,9 @@ public:
     const CCheckpointData& Checkpoints() const { return checkpointData; }
     const ChainTxData& TxData() const { return chainTxData; }
 
+    int MaxReorganizationDepth() const { return nMaxReorganizationDepth; }
+    int MinReorganizationPeers() const { return nMinReorganizationPeers; }
+
 protected:
     CChainParams() {}
 
@@ -103,6 +106,8 @@ protected:
     bool fMineBlocksOnDemand;
     CCheckpointData checkpointData;
     ChainTxData chainTxData;
+    int nMaxReorganizationDepth;
+    int nMinReorganizationPeers;
 };
 
 /**
