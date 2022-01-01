@@ -196,6 +196,8 @@ public:
                         //   (the tx=... number in the SetBestChain debug.log lines)
             0.75      // * estimated number of transactions per second after checkpoint
         };
+        nMaxReorganizationDepth = 5; // PRUX need 5blocks
+        nMinReorganizationPeers = 4;
     }
 };
 static CMainParams mainParams;
