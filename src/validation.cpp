@@ -38,6 +38,7 @@
 #include "validationinterface.h"
 #include "versionbits.h"
 #include "warnings.h"
+#include "net.h"
 
 #include <atomic>
 #include <sstream>
@@ -3021,6 +3022,17 @@ bool ContextualCheckBlockHeader(const CBlockHeader& block, CValidationState& sta
         return state.DoS(100, error("%s : auxpow blocks are not allowed at height %d, parameters effective from %d",
                                     __func__, pindexPrev->nHeight + 1, consensusParams.nHeightEffective),
                          REJECT_INVALID, "early-auxpow-block");
+
+
+    //If this is a reorg, check that it is not too deep
+    int nMaxReorgDepth = GetArg("-maxreorg", Params().MaxReorganizationDepth());
+    int nMinReorgPeers = GetArg("-minreorgpeers", Params().MinReorganizationPeers());
+    bool fGreaterThanMaxReorg = chainActive.Height() - nHeight >= nMaxReorgDepth;
+    if (fGreaterThanMaxReorg && g_connman && (int)g_connman->GetNodeCount(CConnman::CONNECTIONS_ALL) > nMinReorgPeers && !IsInitialBlockDownload())
+        return state.DoS(1, error("%s: forked chain older than max reorganization depth (height %d), with connections (count %d), and (initial download %s)", __func__, nHeight, g_connman ? g_connman->GetNodeCount(CConnman::CONNECTIONS_ALL) : -1, IsInitialBlockDownload() ? "true" : "false"), REJECT_MAXREORGDEPTH, "bad-fork-prior-to-maxreorgdepth");
+
+
+
 
     // Check proof of work
     if (block.nBits != GetNextWorkRequired(pindexPrev, &block, consensusParams))
