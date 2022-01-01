@@ -116,7 +116,7 @@ public:
         consensus.defaultAssumeValid = uint256S("0x32dca787cfb73d50595a599b6fd72afce9a7c52ead22b8f15dfd8aabc5eaac32"); // 2,510,150
 
         // AuxPoW parameters
-        consensus.nAuxpowChainId = 0x03BF; // 98 - Josh Wise!
+        consensus.nAuxpowChainId = 0x03BF; // 959 chPRUX
         consensus.fStrictChainId = true;
         consensus.fAllowLegacyBlocks = true;
         consensus.nHeightEffective = 0;
