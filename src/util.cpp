@@ -574,7 +574,6 @@ void ReadConfigFile(const std::string& confPath)
                           "daemon=1\n"
                           "port=9595\n"
                           "rpcport=22555\n"
-                          "onlynet=ipv4\n"
                           "rpcbind=127.0.0.1\n"
                           "maxconnections=40\n"
                           "fallbackfee=0.0001\n"
