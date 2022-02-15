@@ -171,16 +171,20 @@ BitcoinGUI::BitcoinGUI(const PlatformStyle *_platformStyle, const NetworkStyle *
     }
 
     // Prux: load fallback font in case Comic Sans is not available on the system
-    QFontDatabase::addApplicationFont(":fonts/ComicNeue-Bold");
-    QFontDatabase::addApplicationFont(":fonts/ComicNeue-Bold-Oblique");
-    QFontDatabase::addApplicationFont(":fonts/ComicNeue-Light");
-    QFontDatabase::addApplicationFont(":fonts/ComicNeue-Light-Oblique");
-    QFontDatabase::addApplicationFont(":fonts/ComicNeue-Regular");
-    QFontDatabase::addApplicationFont(":fonts/ComicNeue-Regular-Oblique");
-    QFont::insertSubstitution("Comic Sans MS", "Comic Neue");
+    QFontDatabase::addApplicationFont(":fonts/Roboto-Bold");
+    QFontDatabase::addApplicationFont(":fonts/Roboto-BoldItalic");
+    QFontDatabase::addApplicationFont(":fonts/Roboto-Light");
+    QFontDatabase::addApplicationFont(":fonts/Roboto-LightItalic");
+    QFontDatabase::addApplicationFont(":fonts/Roboto-Regular");
+    QFontDatabase::addApplicationFont(":fonts/Corbel-Bold");
+    QFontDatabase::addApplicationFont(":fonts/Corbel-BoldItalic");
+    QFontDatabase::addApplicationFont(":fonts/Corbel-Regular");
+    QFontDatabase::addApplicationFont(":fonts/Corbel-RegularItalic");
+
+    QFont::insertSubstitution("Corbel", "Corbel");
 
     // Prux: Specify Comic Sans as new font.
-    QFont newFont("Comic Sans MS", 10);
+    QFont newFont("Corbel", 11);
 
     // Prux: Set new application font
     QApplication::setFont(newFont);
@@ -294,14 +298,14 @@ void BitcoinGUI::createActions()
 {
     QActionGroup *tabGroup = new QActionGroup(this);
 
-    overviewAction = new QAction(platformStyle->SingleColorIcon(":/icons/overview"), tr("&YAY"), this);
+    overviewAction = new QAction(platformStyle->SingleColorIcon(":/icons/overview"), tr("&Overview"), this);
     overviewAction->setStatusTip(tr("Show general overview of wallet"));
     overviewAction->setToolTip(overviewAction->statusTip());
     overviewAction->setCheckable(true);
     overviewAction->setShortcut(QKeySequence(Qt::ALT + Qt::Key_1));
     tabGroup->addAction(overviewAction);
 
-    sendCoinsAction = new QAction(platformStyle->SingleColorIcon(":/icons/send"), tr("&PRUX Send"), this);
+    sendCoinsAction = new QAction(platformStyle->SingleColorIcon(":/icons/send"), tr("&Send"), this);
     sendCoinsAction->setStatusTip(tr("Send coins to a Prux address"));
     sendCoinsAction->setToolTip(sendCoinsAction->statusTip());
     sendCoinsAction->setCheckable(true);
@@ -312,7 +316,7 @@ void BitcoinGUI::createActions()
     sendCoinsMenuAction->setStatusTip(sendCoinsAction->statusTip());
     sendCoinsMenuAction->setToolTip(sendCoinsMenuAction->statusTip());
 
-    receiveCoinsAction = new QAction(platformStyle->SingleColorIcon(":/icons/receiving_addresses"), tr("&PRUX Receive"), this);
+    receiveCoinsAction = new QAction(platformStyle->SingleColorIcon(":/icons/receiving_addresses"), tr("&Receive"), this);
     receiveCoinsAction->setStatusTip(tr("Request payments (generates QR codes and prux: URIs)"));
     receiveCoinsAction->setToolTip(receiveCoinsAction->statusTip());
     receiveCoinsAction->setCheckable(true);

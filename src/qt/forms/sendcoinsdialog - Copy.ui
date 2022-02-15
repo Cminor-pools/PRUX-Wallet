@@ -37,14 +37,6 @@
        <height>16777215</height>
       </size>
      </property>
-     <property name="font">
-      <font>
-       <family>Roboto</family>
-       <pointsize>10</pointsize>
-       <weight>50</weight>
-       <bold>false</bold>
-      </font>
-     </property>
      <property name="frameShape">
       <enum>QFrame::StyledPanel</enum>
      </property>
@@ -93,8 +85,6 @@
             </property>
             <property name="font">
              <font>
-              <family>Roboto</family>
-              <pointsize>10</pointsize>
               <weight>75</weight>
               <bold>true</bold>
              </font>
@@ -119,14 +109,6 @@
           </property>
           <item>
            <widget class="QPushButton" name="pushButtonCoinControl">
-            <property name="font">
-             <font>
-              <family>Roboto</family>
-              <pointsize>10</pointsize>
-              <weight>50</weight>
-              <bold>false</bold>
-             </font>
-            </property>
             <property name="styleSheet">
              <string notr="true"/>
             </property>
@@ -140,14 +122,6 @@
           </item>
           <item>
            <widget class="QLabel" name="labelCoinControlAutomaticallySelected">
-            <property name="font">
-             <font>
-              <family>Roboto</family>
-              <pointsize>10</pointsize>
-              <weight>50</weight>
-              <bold>false</bold>
-             </font>
-            </property>
             <property name="text">
              <string>automatically selected</string>
             </property>
@@ -160,14 +134,12 @@
            <widget class="QLabel" name="labelCoinControlInsuffFunds">
             <property name="font">
              <font>
-              <family>Roboto</family>
-              <pointsize>10</pointsize>
               <weight>75</weight>
               <bold>true</bold>
              </font>
             </property>
             <property name="styleSheet">
-             <string notr="true">color: rgb(255, 117, 117);</string>
+             <string notr="true">color:red;font-weight:bold;</string>
             </property>
             <property name="text">
              <string>Insufficient funds!</string>
@@ -179,14 +151,6 @@
           </item>
           <item>
            <spacer name="horizontalSpacerCoinControl">
-            <property name="font">
-             <font>
-              <family>Roboto</family>
-              <pointsize>10</pointsize>
-              <weight>50</weight>
-              <bold>false</bold>
-             </font>
-            </property>
             <property name="orientation">
              <enum>Qt::Horizontal</enum>
             </property>
@@ -213,14 +177,6 @@
             <width>0</width>
             <height>0</height>
            </size>
-          </property>
-          <property name="font">
-           <font>
-            <family>Roboto</family>
-            <pointsize>10</pointsize>
-            <weight>50</weight>
-            <bold>false</bold>
-           </font>
           </property>
           <property name="styleSheet">
            <string notr="true"/>
@@ -272,8 +228,8 @@
                   <font>
                    <family>Roboto</family>
                    <pointsize>10</pointsize>
-                   <weight>50</weight>
-                   <bold>false</bold>
+                   <weight>75</weight>
+                   <bold>true</bold>
                   </font>
                  </property>
                  <property name="text">
@@ -286,14 +242,6 @@
                </item>
                <item row="0" column="1">
                 <widget class="QLabel" name="labelCoinControlQuantity">
-                 <property name="font">
-                  <font>
-                   <family>Roboto</family>
-                   <pointsize>10</pointsize>
-                   <weight>50</weight>
-                   <bold>false</bold>
-                  </font>
-                 </property>
                  <property name="cursor">
                   <cursorShape>IBeamCursor</cursorShape>
                  </property>
@@ -317,8 +265,8 @@
                   <font>
                    <family>Roboto</family>
                    <pointsize>10</pointsize>
-                   <weight>50</weight>
-                   <bold>false</bold>
+                   <weight>75</weight>
+                   <bold>true</bold>
                   </font>
                  </property>
                  <property name="text">
@@ -328,14 +276,6 @@
                </item>
                <item row="1" column="1">
                 <widget class="QLabel" name="labelCoinControlBytes">
-                 <property name="font">
-                  <font>
-                   <family>Roboto</family>
-                   <pointsize>10</pointsize>
-                   <weight>50</weight>
-                   <bold>false</bold>
-                  </font>
-                 </property>
                  <property name="cursor">
                   <cursorShape>IBeamCursor</cursorShape>
                  </property>
@@ -375,8 +315,8 @@
                   <font>
                    <family>Roboto</family>
                    <pointsize>10</pointsize>
-                   <weight>50</weight>
-                   <bold>false</bold>
+                   <weight>75</weight>
+                   <bold>true</bold>
                   </font>
                  </property>
                  <property name="text">
@@ -389,14 +329,6 @@
                </item>
                <item row="0" column="1">
                 <widget class="QLabel" name="labelCoinControlAmount">
-                 <property name="font">
-                  <font>
-                   <family>Roboto</family>
-                   <pointsize>10</pointsize>
-                   <weight>50</weight>
-                   <bold>false</bold>
-                  </font>
-                 </property>
                  <property name="cursor">
                   <cursorShape>IBeamCursor</cursorShape>
                  </property>
@@ -417,8 +349,8 @@
                   <font>
                    <family>Roboto</family>
                    <pointsize>10</pointsize>
-                   <weight>50</weight>
-                   <bold>false</bold>
+                   <weight>75</weight>
+                   <bold>true</bold>
                   </font>
                  </property>
                  <property name="text">
@@ -428,14 +360,6 @@
                </item>
                <item row="1" column="1">
                 <widget class="QLabel" name="labelCoinControlLowOutput">
-                 <property name="font">
-                  <font>
-                   <family>Roboto</family>
-                   <pointsize>10</pointsize>
-                   <weight>50</weight>
-                   <bold>false</bold>
-                  </font>
-                 </property>
                  <property name="cursor">
                   <cursorShape>IBeamCursor</cursorShape>
                  </property>
@@ -475,8 +399,8 @@
                   <font>
                    <family>Roboto</family>
                    <pointsize>10</pointsize>
-                   <weight>50</weight>
-                   <bold>false</bold>
+                   <weight>75</weight>
+                   <bold>true</bold>
                   </font>
                  </property>
                  <property name="text">
@@ -489,14 +413,6 @@
                </item>
                <item row="0" column="1">
                 <widget class="QLabel" name="labelCoinControlFee">
-                 <property name="font">
-                  <font>
-                   <family>Roboto</family>
-                   <pointsize>10</pointsize>
-                   <weight>50</weight>
-                   <bold>false</bold>
-                  </font>
-                 </property>
                  <property name="cursor">
                   <cursorShape>IBeamCursor</cursorShape>
                  </property>
@@ -536,8 +452,8 @@
                   <font>
                    <family>Roboto</family>
                    <pointsize>10</pointsize>
-                   <weight>50</weight>
-                   <bold>false</bold>
+                   <weight>75</weight>
+                   <bold>true</bold>
                   </font>
                  </property>
                  <property name="text">
@@ -550,14 +466,6 @@
                </item>
                <item row="0" column="1">
                 <widget class="QLabel" name="labelCoinControlAfterFee">
-                 <property name="font">
-                  <font>
-                   <family>Roboto</family>
-                   <pointsize>10</pointsize>
-                   <weight>50</weight>
-                   <bold>false</bold>
-                  </font>
-                 </property>
                  <property name="cursor">
                   <cursorShape>IBeamCursor</cursorShape>
                  </property>
@@ -578,8 +486,8 @@
                   <font>
                    <family>Roboto</family>
                    <pointsize>10</pointsize>
-                   <weight>50</weight>
-                   <bold>false</bold>
+                   <weight>75</weight>
+                   <bold>true</bold>
                   </font>
                  </property>
                  <property name="text">
@@ -589,14 +497,6 @@
                </item>
                <item row="1" column="1">
                 <widget class="QLabel" name="labelCoinControlChange">
-                 <property name="font">
-                  <font>
-                   <family>Roboto</family>
-                   <pointsize>10</pointsize>
-                   <weight>50</weight>
-                   <bold>false</bold>
-                  </font>
-                 </property>
                  <property name="cursor">
                   <cursorShape>IBeamCursor</cursorShape>
                  </property>
@@ -634,14 +534,6 @@
           </property>
           <item>
            <widget class="QCheckBox" name="checkBoxCoinControlChange">
-            <property name="font">
-             <font>
-              <family>Roboto</family>
-              <pointsize>10</pointsize>
-              <weight>50</weight>
-              <bold>false</bold>
-             </font>
-            </property>
             <property name="toolTip">
              <string>If this is activated, but the change address is empty or invalid, change will be sent to a newly generated address.</string>
             </property>
@@ -661,14 +553,6 @@
               <verstretch>0</verstretch>
              </sizepolicy>
             </property>
-            <property name="font">
-             <font>
-              <family>Roboto</family>
-              <pointsize>10</pointsize>
-              <weight>50</weight>
-              <bold>false</bold>
-             </font>
-            </property>
            </widget>
           </item>
           <item>
@@ -685,14 +569,6 @@
               <height>0</height>
              </size>
             </property>
-            <property name="font">
-             <font>
-              <family>Roboto</family>
-              <pointsize>10</pointsize>
-              <weight>50</weight>
-              <bold>false</bold>
-             </font>
-            </property>
             <property name="text">
              <string/>
             </property>
@@ -705,14 +581,6 @@
         </item>
         <item>
          <spacer name="verticalSpacerCoinControl">
-          <property name="font">
-           <font>
-            <family>Roboto</family>
-            <pointsize>10</pointsize>
-            <weight>50</weight>
-            <bold>false</bold>
-           </font>
-          </property>
           <property name="orientation">
            <enum>Qt::Vertical</enum>
           </property>
@@ -731,20 +599,6 @@
    </item>
    <item>
     <widget class="QScrollArea" name="scrollArea">
-     <property name="font">
-      <font>
-       <family>Roboto</family>
-       <pointsize>10</pointsize>
-       <weight>50</weight>
-       <bold>false</bold>
-      </font>
-     </property>
-     <property name="autoFillBackground">
-      <bool>false</bool>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background-image: url(:/icons/sendcoin_background);</string>
-     </property>
      <property name="widgetResizable">
       <bool>true</bool>
      </property>
@@ -754,7 +608,7 @@
         <x>0</x>
         <y>0</y>
         <width>830</width>
-        <height>86</height>
+        <height>68</height>
        </rect>
       </property>
       <layout class="QVBoxLayout" name="verticalLayout_2" stretch="0,1">
@@ -779,12 +633,6 @@
        </item>
        <item>
         <spacer name="verticalSpacer">
-         <property name="font">
-          <font>
-           <weight>50</weight>
-           <bold>false</bold>
-          </font>
-         </property>
          <property name="orientation">
           <enum>Qt::Vertical</enum>
          </property>
@@ -813,14 +661,6 @@
        <width>16777215</width>
        <height>16777215</height>
       </size>
-     </property>
-     <property name="font">
-      <font>
-       <family>Roboto</family>
-       <pointsize>10</pointsize>
-       <weight>50</weight>
-       <bold>false</bold>
-      </font>
      </property>
      <property name="frameShape">
       <enum>QFrame::StyledPanel</enum>
@@ -867,14 +707,6 @@
             </property>
             <item>
              <spacer name="verticalSpacerSmartFee">
-              <property name="font">
-               <font>
-                <family>Roboto</family>
-                <pointsize>10</pointsize>
-                <weight>50</weight>
-                <bold>false</bold>
-               </font>
-              </property>
               <property name="orientation">
                <enum>Qt::Vertical</enum>
               </property>
@@ -904,8 +736,6 @@
                 </property>
                 <property name="font">
                  <font>
-                  <family>Roboto</family>
-                  <pointsize>10</pointsize>
                   <weight>75</weight>
                   <bold>true</bold>
                  </font>
@@ -920,14 +750,6 @@
               </item>
               <item>
                <widget class="QLabel" name="labelFeeMinimized">
-                <property name="font">
-                 <font>
-                  <family>Roboto</family>
-                  <pointsize>10</pointsize>
-                  <weight>50</weight>
-                  <bold>false</bold>
-                 </font>
-                </property>
                 <property name="text">
                  <string/>
                 </property>
@@ -935,14 +757,6 @@
               </item>
               <item>
                <widget class="QPushButton" name="buttonChooseFee">
-                <property name="font">
-                 <font>
-                  <family>Roboto</family>
-                  <pointsize>10</pointsize>
-                  <weight>50</weight>
-                  <bold>false</bold>
-                 </font>
-                </property>
                 <property name="text">
                  <string>Choose...</string>
                 </property>
@@ -952,14 +766,6 @@
             </item>
             <item>
              <spacer name="verticalSpacer_5">
-              <property name="font">
-               <font>
-                <family>Roboto</family>
-                <pointsize>10</pointsize>
-                <weight>50</weight>
-                <bold>false</bold>
-               </font>
-              </property>
               <property name="orientation">
                <enum>Qt::Vertical</enum>
               </property>
@@ -979,8 +785,8 @@
              <font>
               <family>Roboto</family>
               <pointsize>10</pointsize>
-              <weight>50</weight>
-              <bold>false</bold>
+              <weight>75</weight>
+              <bold>true</bold>
              </font>
             </property>
             <property name="toolTip">
@@ -996,14 +802,6 @@
           </item>
           <item>
            <spacer name="horizontalSpacer_4">
-            <property name="font">
-             <font>
-              <family>Roboto</family>
-              <pointsize>10</pointsize>
-              <weight>50</weight>
-              <bold>false</bold>
-             </font>
-            </property>
             <property name="orientation">
              <enum>Qt::Horizontal</enum>
             </property>
@@ -1020,14 +818,6 @@
           </item>
           <item>
            <widget class="QPushButton" name="buttonMinimizeFee">
-            <property name="font">
-             <font>
-              <family>Roboto</family>
-              <pointsize>10</pointsize>
-              <weight>50</weight>
-              <bold>false</bold>
-             </font>
-            </property>
             <property name="toolTip">
              <string>collapse fee-settings</string>
             </property>
@@ -1040,14 +830,6 @@
         </item>
         <item>
          <widget class="QFrame" name="frameFeeSelection">
-          <property name="font">
-           <font>
-            <family>Roboto</family>
-            <pointsize>10</pointsize>
-            <weight>50</weight>
-            <bold>false</bold>
-           </font>
-          </property>
           <layout class="QVBoxLayout" name="verticalLayoutFee12">
            <property name="spacing">
             <number>0</number>
@@ -1087,14 +869,6 @@
                 <layout class="QHBoxLayout" name="horizontalLayoutFee13">
                  <item>
                   <widget class="QRadioButton" name="radioCustomPerKilobyte">
-                   <property name="font">
-                    <font>
-                     <family>Roboto</family>
-                     <pointsize>10</pointsize>
-                     <weight>50</weight>
-                     <bold>false</bold>
-                    </font>
-                   </property>
                    <property name="toolTip">
                     <string>If the custom fee is set to 1000 satoshis and the transaction is only 250 bytes, then &quot;per kilobyte&quot; only pays 250 satoshis in fee, while &quot;total at least&quot; pays 1000 satoshis. For transactions bigger than a kilobyte both pay by kilobyte.</string>
                    </property>
@@ -1111,14 +885,6 @@
                  </item>
                  <item>
                   <widget class="QRadioButton" name="radioCustomAtLeast">
-                   <property name="font">
-                    <font>
-                     <family>Roboto</family>
-                     <pointsize>10</pointsize>
-                     <weight>50</weight>
-                     <bold>false</bold>
-                    </font>
-                   </property>
                    <property name="toolTip">
                     <string>If the custom fee is set to 1000 satoshis and the transaction is only 250 bytes, then &quot;per kilobyte&quot; only pays 250 satoshis in fee, while &quot;total at least&quot; pays 1000 satoshis. For transactions bigger than a kilobyte both pay by kilobyte.</string>
                    </property>
@@ -1131,27 +897,10 @@
                   </widget>
                  </item>
                  <item>
-                  <widget class="BitcoinAmountField" name="customFee">
-                   <property name="font">
-                    <font>
-                     <family>Roboto</family>
-                     <pointsize>10</pointsize>
-                     <weight>50</weight>
-                     <bold>false</bold>
-                    </font>
-                   </property>
-                  </widget>
+                  <widget class="BitcoinAmountField" name="customFee"/>
                  </item>
                  <item>
                   <spacer name="horizontalSpacer_6">
-                   <property name="font">
-                    <font>
-                     <family>Roboto</family>
-                     <pointsize>10</pointsize>
-                     <weight>50</weight>
-                     <bold>false</bold>
-                    </font>
-                   </property>
                    <property name="orientation">
                     <enum>Qt::Horizontal</enum>
                    </property>
@@ -1169,14 +918,6 @@
                 <layout class="QHBoxLayout" name="horizontalLayoutFee8">
                  <item>
                   <widget class="QCheckBox" name="checkBoxMinimumFee">
-                   <property name="font">
-                    <font>
-                     <family>Roboto</family>
-                     <pointsize>10</pointsize>
-                     <weight>50</weight>
-                     <bold>false</bold>
-                    </font>
-                   </property>
                    <property name="toolTip">
                     <string>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks. But be aware that this can end up in a never confirming transaction once there is more demand for prux transactions than the network can process.</string>
                    </property>
@@ -1189,14 +930,6 @@
                   <widget class="QLabel" name="labelMinFeeWarning">
                    <property name="enabled">
                     <bool>true</bool>
-                   </property>
-                   <property name="font">
-                    <font>
-                     <family>Roboto</family>
-                     <pointsize>10</pointsize>
-                     <weight>50</weight>
-                     <bold>false</bold>
-                    </font>
                    </property>
                    <property name="toolTip">
                     <string>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks. But be aware that this can end up in a never confirming transaction once there is more demand for prux transactions than the network can process.</string>
@@ -1211,14 +944,6 @@
                  </item>
                  <item>
                   <spacer name="horizontalSpacer_2">
-                   <property name="font">
-                    <font>
-                     <family>Roboto</family>
-                     <pointsize>10</pointsize>
-                     <weight>50</weight>
-                     <bold>false</bold>
-                    </font>
-                   </property>
                    <property name="orientation">
                     <enum>Qt::Horizontal</enum>
                    </property>
@@ -1238,14 +963,6 @@
               <layout class="QVBoxLayout" name="verticalLayoutFee4" stretch="0,1">
                <item>
                 <widget class="QRadioButton" name="radioSmartFee">
-                 <property name="font">
-                  <font>
-                   <family>Roboto</family>
-                   <pointsize>10</pointsize>
-                   <weight>50</weight>
-                   <bold>false</bold>
-                  </font>
-                 </property>
                  <property name="text">
                   <string>Recommended:</string>
                  </property>
@@ -1259,14 +976,6 @@
                </item>
                <item>
                 <spacer name="verticalSpacer_2">
-                 <property name="font">
-                  <font>
-                   <family>Roboto</family>
-                   <pointsize>10</pointsize>
-                   <weight>50</weight>
-                   <bold>false</bold>
-                  </font>
-                 </property>
                  <property name="orientation">
                   <enum>Qt::Vertical</enum>
                  </property>
@@ -1284,14 +993,6 @@
               <layout class="QVBoxLayout" name="verticalLayoutFee9" stretch="0,1">
                <item>
                 <widget class="QRadioButton" name="radioCustomFee">
-                 <property name="font">
-                  <font>
-                   <family>Roboto</family>
-                   <pointsize>10</pointsize>
-                   <weight>50</weight>
-                   <bold>false</bold>
-                  </font>
-                 </property>
                  <property name="text">
                   <string>Custom:</string>
                  </property>
@@ -1302,14 +1003,6 @@
                </item>
                <item>
                 <spacer name="verticalSpacer_6">
-                 <property name="font">
-                  <font>
-                   <family>Roboto</family>
-                   <pointsize>10</pointsize>
-                   <weight>50</weight>
-                   <bold>false</bold>
-                  </font>
-                 </property>
                  <property name="orientation">
                   <enum>Qt::Vertical</enum>
                  </property>
@@ -1335,14 +1028,6 @@
                 <layout class="QHBoxLayout" name="horizontalLayoutFee12">
                  <item>
                   <widget class="QLabel" name="labelSmartFee">
-                   <property name="font">
-                    <font>
-                     <family>Roboto</family>
-                     <pointsize>10</pointsize>
-                     <weight>50</weight>
-                     <bold>false</bold>
-                    </font>
-                   </property>
                    <property name="text">
                     <string/>
                    </property>
@@ -1353,14 +1038,6 @@
                  </item>
                  <item>
                   <widget class="QLabel" name="labelFeeEstimation">
-                   <property name="font">
-                    <font>
-                     <family>Roboto</family>
-                     <pointsize>10</pointsize>
-                     <weight>50</weight>
-                     <bold>false</bold>
-                    </font>
-                   </property>
                    <property name="text">
                     <string/>
                    </property>
@@ -1368,14 +1045,6 @@
                  </item>
                  <item>
                   <widget class="QLabel" name="labelSmartFee2">
-                   <property name="font">
-                    <font>
-                     <family>Roboto</family>
-                     <pointsize>10</pointsize>
-                     <weight>50</weight>
-                     <bold>false</bold>
-                    </font>
-                   </property>
                    <property name="text">
                     <string>(Smart fee not initialized yet. This usually takes a few blocks...)</string>
                    </property>
@@ -1386,14 +1055,6 @@
                  </item>
                  <item>
                   <spacer name="horizontalSpacer_5">
-                   <property name="font">
-                    <font>
-                     <family>Roboto</family>
-                     <pointsize>10</pointsize>
-                     <weight>50</weight>
-                     <bold>false</bold>
-                    </font>
-                   </property>
                    <property name="orientation">
                     <enum>Qt::Horizontal</enum>
                    </property>
@@ -1413,14 +1074,6 @@
                   <layout class="QVBoxLayout" name="verticalLayoutFee6">
                    <item>
                     <widget class="QLabel" name="labelSmartFee3">
-                     <property name="font">
-                      <font>
-                       <family>Roboto</family>
-                       <pointsize>10</pointsize>
-                       <weight>50</weight>
-                       <bold>false</bold>
-                      </font>
-                     </property>
                      <property name="text">
                       <string>Confirmation time target:</string>
                      </property>
@@ -1431,14 +1084,6 @@
                    </item>
                    <item>
                     <spacer name="verticalSpacer_3">
-                     <property name="font">
-                      <font>
-                       <family>Roboto</family>
-                       <pointsize>10</pointsize>
-                       <weight>50</weight>
-                       <bold>false</bold>
-                      </font>
-                     </property>
                      <property name="orientation">
                       <enum>Qt::Vertical</enum>
                      </property>
@@ -1459,14 +1104,6 @@
                    </property>
                    <item>
                     <widget class="QSlider" name="sliderSmartFee">
-                     <property name="font">
-                      <font>
-                       <family>Roboto</family>
-                       <pointsize>10</pointsize>
-                       <weight>50</weight>
-                       <bold>false</bold>
-                      </font>
-                     </property>
                      <property name="minimum">
                       <number>0</number>
                      </property>
@@ -1497,14 +1134,6 @@
                     <layout class="QHBoxLayout" name="horizontalLayoutFee10">
                      <item>
                       <widget class="QLabel" name="labelSmartFeeNormal">
-                       <property name="font">
-                        <font>
-                         <family>Roboto</family>
-                         <pointsize>10</pointsize>
-                         <weight>50</weight>
-                         <bold>false</bold>
-                        </font>
-                       </property>
                        <property name="text">
                         <string>normal</string>
                        </property>
@@ -1512,14 +1141,6 @@
                      </item>
                      <item>
                       <spacer name="horizontalSpacer_7">
-                       <property name="font">
-                        <font>
-                         <family>Roboto</family>
-                         <pointsize>10</pointsize>
-                         <weight>50</weight>
-                         <bold>false</bold>
-                        </font>
-                       </property>
                        <property name="orientation">
                         <enum>Qt::Horizontal</enum>
                        </property>
@@ -1533,14 +1154,6 @@
                      </item>
                      <item>
                       <widget class="QLabel" name="confirmationTargetLabel">
-                       <property name="font">
-                        <font>
-                         <family>Roboto</family>
-                         <pointsize>10</pointsize>
-                         <weight>50</weight>
-                         <bold>false</bold>
-                        </font>
-                       </property>
                        <property name="text">
                         <string notr="true">(count)</string>
                        </property>
@@ -1548,14 +1161,6 @@
                      </item>
                      <item>
                       <spacer name="horizontalSpacer_3">
-                       <property name="font">
-                        <font>
-                         <family>Roboto</family>
-                         <pointsize>10</pointsize>
-                         <weight>50</weight>
-                         <bold>false</bold>
-                        </font>
-                       </property>
                        <property name="orientation">
                         <enum>Qt::Horizontal</enum>
                        </property>
@@ -1569,14 +1174,6 @@
                      </item>
                      <item>
                       <widget class="QLabel" name="labelSmartFeeFast">
-                       <property name="font">
-                        <font>
-                         <family>Roboto</family>
-                         <pointsize>10</pointsize>
-                         <weight>50</weight>
-                         <bold>false</bold>
-                        </font>
-                       </property>
                        <property name="text">
                         <string>fast</string>
                        </property>
@@ -1590,14 +1187,6 @@
                </item>
                <item>
                 <spacer name="verticalSpacer_4">
-                 <property name="font">
-                  <font>
-                   <family>Roboto</family>
-                   <pointsize>10</pointsize>
-                   <weight>50</weight>
-                   <bold>false</bold>
-                  </font>
-                 </property>
                  <property name="orientation">
                   <enum>Qt::Vertical</enum>
                  </property>
@@ -1618,14 +1207,6 @@
         </item>
         <item>
          <spacer name="verticalSpacerFee">
-          <property name="font">
-           <font>
-            <family>Roboto</family>
-            <pointsize>10</pointsize>
-            <weight>50</weight>
-            <bold>false</bold>
-           </font>
-          </property>
           <property name="orientation">
            <enum>Qt::Vertical</enum>
           </property>
@@ -1651,14 +1232,6 @@
          <width>150</width>
          <height>0</height>
         </size>
-       </property>
-       <property name="font">
-        <font>
-         <family>Roboto</family>
-         <pointsize>10</pointsize>
-         <weight>50</weight>
-         <bold>false</bold>
-        </font>
        </property>
        <property name="toolTip">
         <string>Confirm the send action</string>
@@ -1686,14 +1259,6 @@
          <verstretch>0</verstretch>
         </sizepolicy>
        </property>
-       <property name="font">
-        <font>
-         <family>Roboto</family>
-         <pointsize>10</pointsize>
-         <weight>50</weight>
-         <bold>false</bold>
-        </font>
-       </property>
        <property name="toolTip">
         <string>Clear all fields of the form.</string>
        </property>
@@ -1711,14 +1276,6 @@
      </item>
      <item>
       <widget class="QPushButton" name="addButton">
-       <property name="font">
-        <font>
-         <family>Roboto</family>
-         <pointsize>10</pointsize>
-         <weight>50</weight>
-         <bold>false</bold>
-        </font>
-       </property>
        <property name="toolTip">
         <string>Send to multiple recipients at once</string>
        </property>
@@ -1736,14 +1293,6 @@
      </item>
      <item>
       <spacer name="horizontalSpacer">
-       <property name="font">
-        <font>
-         <family>Roboto</family>
-         <pointsize>10</pointsize>
-         <weight>50</weight>
-         <bold>false</bold>
-        </font>
-       </property>
        <property name="orientation">
         <enum>Qt::Horizontal</enum>
        </property>
@@ -1768,14 +1317,6 @@
            <verstretch>0</verstretch>
           </sizepolicy>
          </property>
-         <property name="font">
-          <font>
-           <family>Roboto</family>
-           <pointsize>10</pointsize>
-           <weight>50</weight>
-           <bold>false</bold>
-          </font>
-         </property>
          <property name="text">
           <string>Balance:</string>
          </property>
@@ -1788,14 +1329,6 @@
            <horstretch>0</horstretch>
            <verstretch>0</verstretch>
           </sizepolicy>
-         </property>
-         <property name="font">
-          <font>
-           <family>Roboto</family>
-           <pointsize>10</pointsize>
-           <weight>50</weight>
-           <bold>false</bold>
-          </font>
          </property>
          <property name="cursor">
           <cursorShape>IBeamCursor</cursorShape>
