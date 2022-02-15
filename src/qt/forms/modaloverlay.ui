@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>640</width>
-    <height>385</height>
+    <height>250</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -49,6 +49,12 @@
       </property>
       <item>
        <widget class="QWidget" name="contentWidget" native="true">
+        <property name="maximumSize">
+         <size>
+          <width>640</width>
+          <height>250</height>
+         </size>
+        </property>
         <property name="styleSheet">
          <string notr="true">#contentWidget { background: rgba(255,255,255,240); border-radius: 6px; }
 
@@ -130,7 +136,7 @@ QLabel { color: rgb(40,40,40);  }</string>
              <item>
               <widget class="QLabel" name="infoText">
                <property name="text">
-                <string>Recent transactions may not yet be visible, and therefore your wallet's balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the prux network, as detailed below.</string>
+                <string>Please wait for your wallet has finished synchronizing with the Prux network.</string>
                </property>
                <property name="textFormat">
                 <enum>Qt::RichText</enum>
@@ -144,12 +150,12 @@ QLabel { color: rgb(40,40,40);  }</string>
               <widget class="QLabel" name="infoTextStrong">
                <property name="font">
                 <font>
-                 <weight>75</weight>
-                 <bold>true</bold>
+                 <weight>50</weight>
+                 <bold>false</bold>
                 </font>
                </property>
                <property name="text">
-                <string>Attempting to spend pruxs that are affected by not-yet-displayed transactions will not be accepted by the network.</string>
+                <string/>
                </property>
                <property name="textFormat">
                 <enum>Qt::RichText</enum>
@@ -158,19 +164,6 @@ QLabel { color: rgb(40,40,40);  }</string>
                 <bool>true</bool>
                </property>
               </widget>
-             </item>
-             <item>
-              <spacer name="verticalSpacerInTextSpace">
-               <property name="orientation">
-                <enum>Qt::Vertical</enum>
-               </property>
-               <property name="sizeHint" stdset="0">
-                <size>
-                 <width>20</width>
-                 <height>40</height>
-                </size>
-               </property>
-              </spacer>
              </item>
             </layout>
            </item>
