@@ -82,8 +82,8 @@ public:
         // BIP34 is never enforced in Prux v2 blocks, so we enforce from v3
         consensus.BIP34Height = 99324612;
         consensus.BIP34Hash = uint256S("0x4bd3308d384e80094e4659f9a3245e6f444688edbec0ad88b9a5dfd4be87454e");
-        consensus.BIP65Height = 99324613; // 34cd2cbba4ba366f47e5aa0db5f02c19eba2adf679ceb6653ac003bdc9a0ef1f - first v4 block after the last v3 block
-        consensus.BIP66Height = 99324613; // 80d1364201e5df97e696c03bdd24dc885e8617b9de51e453c10a4f629b1e797a - this is the last block that could be v2, 1900 blocks past the last v2 block
+        consensus.BIP65Height = 99324613;
+        consensus.BIP66Height = 99324613;
         consensus.powLimit = uint256S("0x00000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); // ~uint256(0) >> 20;
         consensus.nPowTargetTimespan = 60 * 6; // pre-digishield: 4 hours
         consensus.nPowTargetSpacing = 3; // 1 minute
@@ -110,10 +110,10 @@ public:
         consensus.vDeployments[Consensus::DEPLOYMENT_SEGWIT].nTimeout = 0; // Disabled
 
         // The best chain should have at least this much work.
-        consensus.nMinimumChainWork = uint256S("0x00000000000000000000000000000000000000000000000000fd6e84dd5364d4");
+        consensus.nMinimumChainWork = uint256S("0x000000000000000000000000000000000000000000000000000002930b980ccc");
 
         // By default assume that the signatures in ancestors of this block are valid.
-        consensus.defaultAssumeValid = uint256S("0x32dca787cfb73d50595a599b6fd72afce9a7c52ead22b8f15dfd8aabc5eaac32"); // 2,510,150
+        consensus.defaultAssumeValid = uint256S("0x69281f320799a7e8e17601c08747b873c96d8e4e19f600b04d4c85541bd38986");
 
         // AuxPoW parameters
         consensus.nAuxpowChainId = 0x03BF; // 959 chPRUX
@@ -161,11 +161,12 @@ public:
         assert(genesis.hashMerkleRoot == uint256S("0x275a35ac6f6d4a6f7a60ee3ca38a90fe98e43646b6535cf3f99f6b004a4016b6"));
 
         // Note that of those with the service bits flag, most only support a subset of possible options
-        vSeeds.push_back(CDNSSeedData("prux.info", "prux.info", true));
-        vSeeds.push_back(CDNSSeedData("seed.prux.info", "seed.prux.info", true));
-        vSeeds.push_back(CDNSSeedData("mastermining.net", "mastermining.net", true));
-        vSeeds.push_back(CDNSSeedData("prux.mastermining.net", "prux.mastermining.net", true));
-        vSeeds.push_back(CDNSSeedData("seed.mastermining.net", "seed.mastermining.net", true));
+
+        vSeeds.push_back(CDNSSeedData("208.87.135.124", "208.87.135.124", true));
+        vSeeds.push_back(CDNSSeedData("89.233.108.211", "89.233.108.211", true));
+        vSeeds.push_back(CDNSSeedData("45.77.150.151", "45.77.150.151", true));
+        vSeeds.push_back(CDNSSeedData("3.131.137.116", "3.131.137.116", true));
+
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,55);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,117);
@@ -186,15 +187,21 @@ public:
         checkpointData = (CCheckpointData) {
             boost::assign::map_list_of
             (      0, uint256S("0x32dca787cfb73d50595a599b6fd72afce9a7c52ead22b8f15dfd8aabc5eaac32"))
+            (      1, uint256S("0x0646dc498ecdfb38e2ac8857c73f6dde6f6ac8f020e33f11e233915e1618327a"))
+            (      20, uint256S("0x28b84136c8331f9c62275526fae2dc74b6dfdb51a73cb20ade122373af3f7bac"))
+            (      100, uint256S("0xe95e5a541c965f85892bff681c9403925eb8321c92e24832fcb5dc27103cb39d"))
+            (      1000, uint256S("0x71a44adce38c8930d7aeb80a3af187ea5f901b5f4c4f408f9ed599d7a3a815d0"))
+            (      20000, uint256S("0x1008f379d4a8f170210f8c282f7b1ff70a4c1d62e123300e7c28b36a0d8afb3e"))
+            (      40000, uint256S("0x69281f320799a7e8e17601c08747b873c96d8e4e19f600b04d4c85541bd38986"))
         };
 
         chainTxData = ChainTxData{
             // Data as of block 6be57e0de4b4f0a956a564da5e5549697fbed520d00684aac3e24e8417cf824b (height 11461900).
             // Tx estimate based on average of year 2013 (~27k transactions per day)
-            1406496258, // * UNIX timestamp of last checkpoint block
-            0,   // * total number of transactions between genesis and last checkpoint
+            1500987784, // * UNIX timestamp of last checkpoint block
+            40001,   // * total number of transactions between genesis and last checkpoint
                         //   (the tx=... number in the SetBestChain debug.log lines)
-            0.75      // * estimated number of transactions per second after checkpoint
+            0.000370      // * estimated number of transactions per second after checkpoint
         };
     }
 };
