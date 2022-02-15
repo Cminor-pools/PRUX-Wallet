@@ -10,12 +10,6 @@
     <height>440</height>
    </rect>
   </property>
-  <property name="font">
-   <font>
-    <family>Roboto</family>
-    <pointsize>12</pointsize>
-   </font>
-  </property>
   <property name="windowTitle">
    <string>Options</string>
   </property>
@@ -25,12 +19,6 @@
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
     <widget class="QTabWidget" name="tabWidget">
-     <property name="font">
-      <font>
-       <family>Roboto Lt</family>
-       <pointsize>11</pointsize>
-      </font>
-     </property>
      <property name="currentIndex">
       <number>0</number>
      </property>
@@ -739,8 +727,6 @@
        </property>
        <property name="font">
         <font>
-         <family>Roboto</family>
-         <pointsize>12</pointsize>
          <weight>75</weight>
          <bold>true</bold>
         </font>

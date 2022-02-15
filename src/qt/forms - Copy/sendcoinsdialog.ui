@@ -10,12 +10,6 @@
     <height>526</height>
    </rect>
   </property>
-  <property name="font">
-   <font>
-    <family>Roboto Lt</family>
-    <pointsize>11</pointsize>
-   </font>
-  </property>
   <property name="windowTitle">
    <string>Send Coins</string>
   </property>
@@ -226,8 +220,6 @@
                 <widget class="QLabel" name="labelCoinControlQuantityText">
                  <property name="font">
                   <font>
-                   <family>Roboto Lt</family>
-                   <pointsize>11</pointsize>
                    <weight>75</weight>
                    <bold>true</bold>
                   </font>
@@ -263,8 +255,6 @@
                 <widget class="QLabel" name="labelCoinControlBytesText">
                  <property name="font">
                   <font>
-                   <family>Roboto Lt</family>
-                   <pointsize>11</pointsize>
                    <weight>75</weight>
                    <bold>true</bold>
                   </font>
@@ -313,8 +303,6 @@
                 <widget class="QLabel" name="labelCoinControlAmountText">
                  <property name="font">
                   <font>
-                   <family>Roboto Lt</family>
-                   <pointsize>11</pointsize>
                    <weight>75</weight>
                    <bold>true</bold>
                   </font>
@@ -347,8 +335,6 @@
                 <widget class="QLabel" name="labelCoinControlLowOutputText">
                  <property name="font">
                   <font>
-                   <family>Roboto Lt</family>
-                   <pointsize>11</pointsize>
                    <weight>75</weight>
                    <bold>true</bold>
                   </font>
@@ -397,8 +383,6 @@
                 <widget class="QLabel" name="labelCoinControlFeeText">
                  <property name="font">
                   <font>
-                   <family>Roboto Lt</family>
-                   <pointsize>11</pointsize>
                    <weight>75</weight>
                    <bold>true</bold>
                   </font>
@@ -450,8 +434,6 @@
                 <widget class="QLabel" name="labelCoinControlAfterFeeText">
                  <property name="font">
                   <font>
-                   <family>Roboto Lt</family>
-                   <pointsize>11</pointsize>
                    <weight>75</weight>
                    <bold>true</bold>
                   </font>
@@ -484,8 +466,6 @@
                 <widget class="QLabel" name="labelCoinControlChangeText">
                  <property name="font">
                   <font>
-                   <family>Roboto Lt</family>
-                   <pointsize>11</pointsize>
                    <weight>75</weight>
                    <bold>true</bold>
                   </font>
@@ -608,7 +588,7 @@
         <x>0</x>
         <y>0</y>
         <width>830</width>
-        <height>68</height>
+        <height>104</height>
        </rect>
       </property>
       <layout class="QVBoxLayout" name="verticalLayout_2" stretch="0,1">
@@ -781,16 +761,14 @@
           </item>
           <item>
            <widget class="QLabel" name="fallbackFeeWarningLabel">
-            <property name="font">
-             <font>
-              <family>Roboto Lt</family>
-              <pointsize>11</pointsize>
-              <weight>75</weight>
-              <bold>true</bold>
-             </font>
-            </property>
             <property name="toolTip">
              <string>Using the fallbackfee can result in sending a transaction that will take several hours or days (or never) to confirm. Consider choosing your fee manually or wait until your have validated the complete chain.</string>
+            </property>
+            <property name="font">
+            <font>
+                <weight>75</weight>
+                <bold>true</bold>
+            </font>
             </property>
             <property name="text">
              <string>Warning: Fee estimation is currently not possible.</string>

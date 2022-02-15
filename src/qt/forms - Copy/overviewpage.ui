@@ -127,7 +127,7 @@
               <property name="font">
                <font>
                 <family>Roboto</family>
-                <pointsize>10</pointsize>
+                <pointsize>12</pointsize>
                 <weight>50</weight>
                 <bold>false</bold>
                </font>
@@ -157,7 +157,7 @@
               <property name="font">
                <font>
                 <family>Roboto</family>
-                <pointsize>10</pointsize>
+                <pointsize>12</pointsize>
                 <weight>50</weight>
                 <bold>false</bold>
                </font>
@@ -175,7 +175,7 @@
               <property name="font">
                <font>
                 <family>Roboto</family>
-                <pointsize>10</pointsize>
+                <pointsize>12</pointsize>
                 <weight>50</weight>
                 <bold>false</bold>
                </font>
@@ -231,7 +231,7 @@
               <property name="font">
                <font>
                 <family>Roboto</family>
-                <pointsize>10</pointsize>
+                <pointsize>12</pointsize>
                 <weight>50</weight>
                 <bold>false</bold>
                </font>
@@ -330,7 +330,7 @@
               <property name="font">
                <font>
                 <family>Roboto</family>
-                <pointsize>10</pointsize>
+                <pointsize>12</pointsize>
                 <weight>50</weight>
                 <bold>false</bold>
                </font>
@@ -370,7 +370,7 @@
               <property name="font">
                <font>
                 <family>Roboto</family>
-                <pointsize>10</pointsize>
+                <pointsize>12</pointsize>
                 <weight>50</weight>
                 <bold>false</bold>
                </font>
@@ -418,7 +418,7 @@
               <property name="font">
                <font>
                 <family>Roboto</family>
-                <pointsize>10</pointsize>
+                <pointsize>12</pointsize>
                 <weight>50</weight>
                 <bold>false</bold>
                </font>
@@ -436,7 +436,7 @@
               <property name="font">
                <font>
                 <family>Roboto</family>
-                <pointsize>10</pointsize>
+                <pointsize>12</pointsize>
                 <weight>50</weight>
                 <bold>false</bold>
                </font>
@@ -466,7 +466,7 @@
               <property name="font">
                <font>
                 <family>Roboto</family>
-                <pointsize>10</pointsize>
+                <pointsize>12</pointsize>
                 <weight>50</weight>
                 <bold>false</bold>
                </font>
@@ -513,14 +513,8 @@
         <widget class="QLabel" name="label_wallet_bgcoin">
          <property name="maximumSize">
           <size>
-           <width>1024</width>
-           <height>1024</height>
-          </size>
-         </property>
-         <property name="baseSize">
-          <size>
-           <width>300</width>
-           <height>300</height>
+           <width>0</width>
+           <height>0</height>
           </size>
          </property>
          <property name="text">
@@ -535,17 +529,8 @@
          <property name="alignment">
           <set>Qt::AlignCenter</set>
          </property>
-         <property name="wordWrap">
-          <bool>false</bool>
-         </property>
          <property name="margin">
           <number>-2</number>
-         </property>
-         <property name="indent">
-          <number>-1</number>
-         </property>
-         <property name="openExternalLinks">
-          <bool>false</bool>
          </property>
         </widget>
        </item>
