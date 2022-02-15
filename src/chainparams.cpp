@@ -193,15 +193,19 @@ public:
             (      1000, uint256S("0x71a44adce38c8930d7aeb80a3af187ea5f901b5f4c4f408f9ed599d7a3a815d0"))
             (      20000, uint256S("0x1008f379d4a8f170210f8c282f7b1ff70a4c1d62e123300e7c28b36a0d8afb3e"))
             (      40000, uint256S("0x69281f320799a7e8e17601c08747b873c96d8e4e19f600b04d4c85541bd38986"))
+            (      100000, uint256S("0x2bc3ff8e8344d319f237be6ba3bc9a4c0a8ffb2e22caf40efa4d935ecc44b57f"))
+            (      400000, uint256S("0x54c3a4fed303b647c5a383ab34b99beb039162180761359d7f51d7957d19c1fe"))
+            (      700000, uint256S("0x33580262c7f430420f4b9bdb8e72f8cc827f077672bd269d4befe8bf720f950f"))
+            (      1000000, uint256S("0xce439d8e0a980ad3b34eb9fdef17baaec60062ca7173799d741b02c06dd2acc5"))
+            (      1400000, uint256S("0xa64c01633354a47a59ba37bc13a4527b43a32e2d8d55b432021a474e6bc104a7"))
+            (      1700000, uint256S("0xb4e974c7883b420de998d3f6327e3826d3119201711a756ad03dba99e711b074"))
+            (      2100000, uint256S("0x897e2716ee116d078283b990c34b168274a6cfbc0e9be6b9cc027233d92060f3"))
         };
 
         chainTxData = ChainTxData{
-            // Data as of block 6be57e0de4b4f0a956a564da5e5549697fbed520d00684aac3e24e8417cf824b (height 11461900).
-            // Tx estimate based on average of year 2013 (~27k transactions per day)
-            1500987784, // * UNIX timestamp of last checkpoint block
-            40001,   // * total number of transactions between genesis and last checkpoint
-                        //   (the tx=... number in the SetBestChain debug.log lines)
-            0.000370      // * estimated number of transactions per second after checkpoint
+            1511215337,
+            2128782,
+            0.977283
         };
     }
 };
