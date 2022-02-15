@@ -12,8 +12,8 @@
   </property>
   <property name="font">
    <font>
-    <family>Roboto Lt</family>
-    <pointsize>11</pointsize>
+    <family>Roboto</family>
+    <pointsize>10</pointsize>
    </font>
   </property>
   <property name="windowTitle">

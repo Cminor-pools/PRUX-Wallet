@@ -27,8 +27,8 @@
     <widget class="QTabWidget" name="tabWidget">
      <property name="font">
       <font>
-       <family>Roboto Lt</family>
-       <pointsize>11</pointsize>
+       <family>Roboto</family>
+       <pointsize>10</pointsize>
       </font>
      </property>
      <property name="currentIndex">
@@ -611,6 +611,20 @@
             <string>Choose the default subdivision unit to show in the interface and when sending coins.</string>
            </property>
           </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_5_Display">
+         <item>
+          <widget class="QLabel" name="digitsLabel">
+           <property name="text">
+            <string>Decimal digits</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QValueComboBox" name="digits"/>
          </item>
         </layout>
        </item>

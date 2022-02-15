@@ -560,8 +560,40 @@ boost::filesystem::path GetConfigFile(const std::string& confPath)
 void ReadConfigFile(const std::string& confPath)
 {
     boost::filesystem::ifstream streamConfig(GetConfigFile(confPath));
-    if (!streamConfig.good())
-        return; // No bitcoin.conf file is OK
+    if (!streamConfig.good()){
+        // Create empty minerium.conf if it does not excist
+        FILE* configFile = fopen(GetConfigFile(confPath).string().c_str(), "a");
+
+        if (configFile != NULL) {
+            std::string strHeader = "# Prux config file:\n"
+                          "rpcuser=username\n"
+                          "rpcpassword=password\n"
+                          "server=1\n"
+                          "listen=1\n"
+                          "#txindex=1\n"
+                          "daemon=1\n"
+                          "port=9595\n"
+                          "rpcport=22555\n"
+                          "onlynet=ipv4\n"
+                          "rpcbind=127.0.0.1\n"
+                          "maxconnections=40\n"
+                          "fallbackfee=0.0001\n"
+                          "rpcallowip=127.0.0.1\n"
+                          "\n"
+                          "# ADDNODES:\n"
+                          "addnode=208.87.135.124:9595\n"
+                          "addnode=89.233.108.211:9595\n"
+                          "addnode=45.77.150.151:9595\n"
+                          "addnode=3.131.137.116:9595\n"
+                          "addnode=103.249.70.56:9595\n"
+                          "addnode=103.249.70.56:9585\n"
+                          "addnode=103.249.70.56:9575\n"
+                          "addnode=103.249.70.56:9565\n";
+            fwrite(strHeader.c_str(), std::strlen(strHeader.c_str()), 1, configFile);
+            fclose(configFile);
+        }
+        return; // Nothing to read, so just return
+    }
 
     {
         LOCK(cs_args);

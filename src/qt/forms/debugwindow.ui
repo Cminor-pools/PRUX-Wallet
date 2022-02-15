@@ -24,8 +24,8 @@
     <widget class="QTabWidget" name="tabWidget">
      <property name="font">
       <font>
-       <family>Roboto Lt</family>
-       <pointsize>11</pointsize>
+       <family>Roboto</family>
+       <pointsize>10</pointsize>
       </font>
      </property>
      <property name="currentIndex">
@@ -43,8 +43,8 @@
         <widget class="QLabel" name="label_9">
          <property name="font">
           <font>
-           <family>Roboto Lt</family>
-           <pointsize>11</pointsize>
+           <family>Roboto</family>
+           <pointsize>10</pointsize>
            <weight>75</weight>
            <bold>true</bold>
           </font>
@@ -182,8 +182,8 @@
         <widget class="QLabel" name="labelNetwork">
          <property name="font">
           <font>
-           <family>Roboto Lt</family>
-           <pointsize>11</pointsize>
+           <family>Roboto</family>
+           <pointsize>10</pointsize>
            <weight>75</weight>
            <bold>true</bold>
           </font>
@@ -243,8 +243,8 @@
         <widget class="QLabel" name="label_10">
          <property name="font">
           <font>
-           <family>Roboto Lt</family>
-           <pointsize>11</pointsize>
+           <family>Roboto</family>
+           <pointsize>10</pointsize>
            <weight>75</weight>
            <bold>true</bold>
           </font>
@@ -304,8 +304,8 @@
         <widget class="QLabel" name="labelMempoolTitle">
          <property name="font">
           <font>
-           <family>Roboto Lt</family>
-           <pointsize>11</pointsize>
+           <family>Roboto</family>
+           <pointsize>10</pointsize>
            <weight>75</weight>
            <bold>true</bold>
           </font>
@@ -912,7 +912,7 @@
            </property>
            <property name="font">
             <font>
-             <family>Roboto Lt</family>
+             <family>Roboto</family>
              <pointsize>12</pointsize>
             </font>
            </property>
@@ -973,7 +973,7 @@
          </property>
          <property name="font">
           <font>
-           <family>Roboto Lt</family>
+           <family>Roboto</family>
            <pointsize>10</pointsize>
           </font>
          </property>

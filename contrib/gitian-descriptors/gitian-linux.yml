@@ -28,7 +28,7 @@ packages:
 - "ca-certificates"
 - "python"
 remotes:
-- "url": "https://github.com/prux/prux.git"
+- "url": "https://github.com/BITRY/PRUX-Wallet.git"
   "dir": "prux"
 files: []
 script: |

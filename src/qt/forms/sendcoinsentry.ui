@@ -10,12 +10,6 @@
     <height>150</height>
    </rect>
   </property>
-  <property name="font">
-   <font>
-    <family>Roboto Lt</family>
-    <pointsize>11</pointsize>
-   </font>
-  </property>
   <property name="focusPolicy">
    <enum>Qt::TabFocus</enum>
   </property>
@@ -63,7 +57,7 @@
       <item>
        <widget class="QValidatedLineEdit" name="payTo">
         <property name="toolTip">
-         <string>The Prux address to send the payment to</string>
+         <string>The Waluuta address to send the payment to</string>
         </property>
        </widget>
       </item>
@@ -176,7 +170,7 @@
       <item>
        <widget class="QCheckBox" name="checkboxSubtractFeeFromAmount">
         <property name="toolTip">
-         <string>The fee will be deducted from the amount being sent. The recipient will receive less pruxs than you enter in the amount field. If multiple recipients are selected, the fee is split equally.</string>
+         <string>The fee will be deducted from the amount being sent. The recipient will receive less waluutas than you enter in the amount field. If multiple recipients are selected, the fee is split equally.</string>
         </property>
         <property name="text">
          <string>S&amp;ubtract fee from amount</string>
@@ -198,7 +192,7 @@
     <item row="3" column="1">
      <widget class="QLabel" name="messageTextLabel">
       <property name="toolTip">
-       <string>A message that was attached to the prux: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Prux network.</string>
+       <string>A message that was attached to the waluuta: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Waluuta network.</string>
       </property>
       <property name="textFormat">
        <enum>Qt::PlainText</enum>
@@ -353,15 +347,6 @@
         </color>
        </brush>
       </colorrole>
-      <colorrole role="PlaceholderText">
-       <brush brushstyle="NoBrush">
-        <color alpha="128">
-         <red>0</red>
-         <green>0</green>
-         <blue>0</blue>
-        </color>
-       </brush>
-      </colorrole>
      </active>
      <inactive>
       <colorrole role="WindowText">
@@ -499,15 +484,6 @@
         </color>
        </brush>
       </colorrole>
-      <colorrole role="PlaceholderText">
-       <brush brushstyle="NoBrush">
-        <color alpha="128">
-         <red>0</red>
-         <green>0</green>
-         <blue>0</blue>
-        </color>
-       </brush>
-      </colorrole>
      </inactive>
      <disabled>
       <colorrole role="WindowText">
@@ -639,15 +615,6 @@
       <colorrole role="ToolTipText">
        <brush brushstyle="SolidPattern">
         <color alpha="255">
-         <red>0</red>
-         <green>0</green>
-         <blue>0</blue>
-        </color>
-       </brush>
-      </colorrole>
-      <colorrole role="PlaceholderText">
-       <brush brushstyle="NoBrush">
-        <color alpha="128">
          <red>0</red>
          <green>0</green>
          <blue>0</blue>
@@ -891,15 +858,6 @@
         </color>
        </brush>
       </colorrole>
-      <colorrole role="PlaceholderText">
-       <brush brushstyle="NoBrush">
-        <color alpha="128">
-         <red>0</red>
-         <green>0</green>
-         <blue>0</blue>
-        </color>
-       </brush>
-      </colorrole>
      </active>
      <inactive>
       <colorrole role="WindowText">
@@ -1040,15 +998,6 @@
       <colorrole role="ToolTipText">
        <brush brushstyle="SolidPattern">
         <color alpha="255">
-         <red>0</red>
-         <green>0</green>
-         <blue>0</blue>
-        </color>
-       </brush>
-      </colorrole>
-      <colorrole role="PlaceholderText">
-       <brush brushstyle="NoBrush">
-        <color alpha="128">
          <red>0</red>
          <green>0</green>
          <blue>0</blue>
@@ -1201,15 +1150,6 @@
         </color>
        </brush>
       </colorrole>
-      <colorrole role="PlaceholderText">
-       <brush brushstyle="NoBrush">
-        <color alpha="128">
-         <red>0</red>
-         <green>0</green>
-         <blue>0</blue>
-        </color>
-       </brush>
-      </colorrole>
      </disabled>
     </palette>
    </property>
@@ -1314,7 +1254,6 @@
    <class>BitcoinAmountField</class>
    <extends>QLineEdit</extends>
    <header>bitcoinamountfield.h</header>
-   <container>1</container>
   </customwidget>
  </customwidgets>
  <tabstops>

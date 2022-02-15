@@ -57,6 +57,8 @@
         <file alias="paper_wallet">res/icons/paper_wallet.png</file>
         <file alias="print">res/icons/print.png</file>
         <file alias="splashscreen">res/icons/splashscreen.png</file>
+        <file alias="overview_background">res/icons/overview_background.png</file>
+        <file alias="modal_background">res/icons/modal_background.png</file>
     </qresource>
     <qresource prefix="/movies">
         <file alias="spinner-000">res/movies/spinner-000.png</file>
