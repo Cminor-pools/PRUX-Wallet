@@ -576,7 +576,6 @@ void ReadConfigFile(const std::string& confPath)
                           "rpcport=22555\n"
                           "rpcbind=127.0.0.1\n"
                           "maxconnections=40\n"
-                          "shrinkdebugfile=1\n"
                           "fallbackfee=0.0001\n"
                           "rpcallowip=127.0.0.1\n"
                           "\n"
