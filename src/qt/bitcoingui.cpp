@@ -181,10 +181,10 @@ BitcoinGUI::BitcoinGUI(const PlatformStyle *_platformStyle, const NetworkStyle *
     QFontDatabase::addApplicationFont(":fonts/Corbel-Regular");
     QFontDatabase::addApplicationFont(":fonts/Corbel-RegularItalic");
 
-    QFont::insertSubstitution("Corbel", "Corbel");
+    QFont::insertSubstitution("Roboto Lt", "Roboto");
 
     // Prux: Specify Comic Sans as new font.
-    QFont newFont("Corbel", 11);
+    QFont newFont("Roboto Lt", 11);
 
     // Prux: Set new application font
     QApplication::setFont(newFont);
