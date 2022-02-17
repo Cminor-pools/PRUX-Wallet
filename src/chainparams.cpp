@@ -92,28 +92,28 @@ public:
         consensus.fPowAllowMinDifficultyBlocks = false;
         consensus.fPowAllowDigishieldMinDifficultyBlocks = false;
         consensus.fPowNoRetargeting = false;
-        consensus.nRuleChangeActivationThreshold = 9576; // 95% of 10,080
-        consensus.nMinerConfirmationWindow = 10080; // 60 * 24 * 7 = 10,080 blocks, or one week
+        consensus.nRuleChangeActivationThreshold = 9576;
+        consensus.nMinerConfirmationWindow = 10080;
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].bit = 28;
-        consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].nStartTime = 1199145601; // January 1, 2008
-        consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].nTimeout = 1230767999; // December 31, 2008
+        consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].nStartTime = 1199145601;
+        consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].nTimeout = 1230767999;
 
         // Deployment of BIP68, BIP112, and BIP113.
         // XXX: BIP heights and hashes all need to be updated to Prux values
         consensus.vDeployments[Consensus::DEPLOYMENT_CSV].bit = 0;
-        consensus.vDeployments[Consensus::DEPLOYMENT_CSV].nStartTime = 2212942090; // May 1st, 2016
-        consensus.vDeployments[Consensus::DEPLOYMENT_CSV].nTimeout = 2213546890; // May 1st, 2017
+        consensus.vDeployments[Consensus::DEPLOYMENT_CSV].nStartTime = 2212942090;
+        consensus.vDeployments[Consensus::DEPLOYMENT_CSV].nTimeout = 2213546890;
 
         // Deployment of SegWit (BIP141, BIP143, and BIP147)
         consensus.vDeployments[Consensus::DEPLOYMENT_SEGWIT].bit = 1;
-        consensus.vDeployments[Consensus::DEPLOYMENT_SEGWIT].nStartTime = 2212942090; // November 15th, 2016.
-        consensus.vDeployments[Consensus::DEPLOYMENT_SEGWIT].nTimeout = 0; // Disabled
+        consensus.vDeployments[Consensus::DEPLOYMENT_SEGWIT].nStartTime = 2212942090;
+        consensus.vDeployments[Consensus::DEPLOYMENT_SEGWIT].nTimeout = 0;
 
         // The best chain should have at least this much work.
-        consensus.nMinimumChainWork = uint256S("0x000000000000000000000000000000000000000000000000000002930b980ccc");
+        consensus.nMinimumChainWork = uint256S("0x00000000000000000000000000000000000000000000000000c1c4e4e58c7878");
 
         // By default assume that the signatures in ancestors of this block are valid.
-        consensus.defaultAssumeValid = uint256S("0x69281f320799a7e8e17601c08747b873c96d8e4e19f600b04d4c85541bd38986");
+        consensus.defaultAssumeValid = uint256S("0x48b2c520b23f723966ab9df8d78596d52e8e5306aa562c4b6a5580f42bf507b4");
 
         // AuxPoW parameters
         consensus.nAuxpowChainId = 0x03BF; // 959 chPRUX
@@ -192,20 +192,33 @@ public:
             (      100, uint256S("0xe95e5a541c965f85892bff681c9403925eb8321c92e24832fcb5dc27103cb39d"))
             (      1000, uint256S("0x71a44adce38c8930d7aeb80a3af187ea5f901b5f4c4f408f9ed599d7a3a815d0"))
             (      20000, uint256S("0x1008f379d4a8f170210f8c282f7b1ff70a4c1d62e123300e7c28b36a0d8afb3e"))
-            (      40000, uint256S("0x69281f320799a7e8e17601c08747b873c96d8e4e19f600b04d4c85541bd38986"))
             (      100000, uint256S("0x2bc3ff8e8344d319f237be6ba3bc9a4c0a8ffb2e22caf40efa4d935ecc44b57f"))
-            (      400000, uint256S("0x54c3a4fed303b647c5a383ab34b99beb039162180761359d7f51d7957d19c1fe"))
-            (      700000, uint256S("0x33580262c7f430420f4b9bdb8e72f8cc827f077672bd269d4befe8bf720f950f"))
+            (      500000, uint256S("0xd60cd87bd932251cde2151144af26652836cd184f99ac0c0f83a82ec6258905a"))
             (      1000000, uint256S("0xce439d8e0a980ad3b34eb9fdef17baaec60062ca7173799d741b02c06dd2acc5"))
-            (      1400000, uint256S("0xa64c01633354a47a59ba37bc13a4527b43a32e2d8d55b432021a474e6bc104a7"))
-            (      1700000, uint256S("0xb4e974c7883b420de998d3f6327e3826d3119201711a756ad03dba99e711b074"))
-            (      2100000, uint256S("0x897e2716ee116d078283b990c34b168274a6cfbc0e9be6b9cc027233d92060f3"))
+            (      2000000, uint256S("0xe7984e478da979989290a8e29a4a0054c5fff129f2890ebbf4b38bde47a31acd"))
+            (      3000000, uint256S("0xd7f0c99a9a6d331797314284ca55a2b5b56a893e10eed7641a7d1b5514c4ed62"))
+            (      4000000, uint256S("0xa8c2b6b7ec104320ac552ea364abcd2c2091db1b9cc00a14c79d95523cb1c66f"))
+            (      5000000, uint256S("0x723bd02efaf388698d2f36d0c5a20bfb79ed60e16018b4d4c63c036f34a41d64"))
+            (      6000000, uint256S("0x184b159847c6e00dc6d03977d8dc311e7f756e23e9e72bd3efb2858a86ab7e01"))
+            (      7000000, uint256S("0x458c49b767aac277b326b8ea3fafee189f059d9a5507f84d2ee1b45975ce338d"))
+            (      8000000, uint256S("0xe043e3e91f2b06f50f5fab9f7dcd134df720c3c0ca1f6b58194e0620f375b164"))
+            (      9000000, uint256S("0xa2641f838c6fdb933b5c38c457386099cbeb810db59ded64caf8c912350ea7bf"))
+            (      10000000, uint256S("0x56f43abdd3de28ddf9de47826ec859c7afce22871e425c6f0775820bb6d9b6e4"))
+            (      11000000, uint256S("0x9ecdd73d2e129795a53541ea68248d3bb75f5ab2c1e08b6f5aa2031e787701b0"))
+            (      12000000, uint256S("0x8fd44d1994fa0b0e6f20a86993264f56def42a4bcd43316722b92d4da21b175f"))
+            (      13000000, uint256S("0x73ce5fae93a114aafa14ef8d6140f80bb2a62085dfdc595f1abd139c2ad392e2"))
+            (      14000000, uint256S("0x953bd93a9d9fe442e971c243778894ecbb9d649907b2a066a03994aaef2c3640"))
+            (      15000000, uint256S("0x516bc4385902843d2d24ba0944b7e1388bce6803ac22ba5593f085de959df334"))
+            (      16000000, uint256S("0x209d5b71eeca63db0b31d66761464750a43feea308ad49702d31bf02a960eccd"))
+            (      17000000, uint256S("0xee0c1dce907b20a0c4df97f8f51daefb41d4557a31c90071f876cf1557314df7"))
+            (      17408069, uint256S("0xb1a12207838b0c6c24d20e76a39b2b621aed136f97823af14090f7a071a75395"))
+            (      17408071, uint256S("0x48b2c520b23f723966ab9df8d78596d52e8e5306aa562c4b6a5580f42bf507b4"))
         };
 
         chainTxData = ChainTxData{
-            1511215337,
-            2128782,
-            0.977283
+            1645078833,
+            18685805,
+            0.999988
         };
     }
 };

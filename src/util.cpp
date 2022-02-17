@@ -572,6 +572,7 @@ void ReadConfigFile(const std::string& confPath)
                           "listen=1\n"
                           "#txindex=1\n"
                           "daemon=1\n"
+                          "upnp=1\n"
                           "port=9595\n"
                           "rpcport=22555\n"
                           "rpcbind=127.0.0.1\n"
