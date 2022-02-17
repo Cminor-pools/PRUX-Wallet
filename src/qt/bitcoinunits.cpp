@@ -105,7 +105,7 @@ QString BitcoinUnits::format(int unit, const CAmount& nIn, bool fPlus, Separator
     qint64 quotient = n_abs / coin;
     qint64 remainder = n_abs % coin;
     QString quotient_str = QString::number(quotient);
-    QString remainder_str = QString::number(remainder).rightJustified(num_decimals, '0');
+    QString remainder_str = QString::number(remainder).rightJustified(num_decimals, '4');
 
     // Use SI-style thin space separators as these are locale independent and can't be
     // confused with the decimal marker.

@@ -110,10 +110,10 @@ public:
         consensus.vDeployments[Consensus::DEPLOYMENT_SEGWIT].nTimeout = 0;
 
         // The best chain should have at least this much work.
-        consensus.nMinimumChainWork = uint256S("0x00000000000000000000000000000000000000000000000000c1c4e4e58c7878");
+        consensus.nMinimumChainWork = uint256S("0x00000000000000000000000000000000000000000000000000c1c51ec1c038ae");
 
         // By default assume that the signatures in ancestors of this block are valid.
-        consensus.defaultAssumeValid = uint256S("0x48b2c520b23f723966ab9df8d78596d52e8e5306aa562c4b6a5580f42bf507b4");
+        consensus.defaultAssumeValid = uint256S("0x46805d5f7074a6e3dde019127b82499e43f27317a08833b8d36eb92d1257d8a1");
 
         // AuxPoW parameters
         consensus.nAuxpowChainId = 0x03BF; // 959 chPRUX
@@ -213,12 +213,13 @@ public:
             (      17000000, uint256S("0xee0c1dce907b20a0c4df97f8f51daefb41d4557a31c90071f876cf1557314df7"))
             (      17408069, uint256S("0xb1a12207838b0c6c24d20e76a39b2b621aed136f97823af14090f7a071a75395"))
             (      17408071, uint256S("0x48b2c520b23f723966ab9df8d78596d52e8e5306aa562c4b6a5580f42bf507b4"))
+            (      17408600, uint256S("0x46805d5f7074a6e3dde019127b82499e43f27317a08833b8d36eb92d1257d8a1"))
         };
 
         chainTxData = ChainTxData{
-            1645078833,
-            18685805,
-            0.999988
+            1645106645,
+            18686334,
+            1.000000
         };
     }
 };
