@@ -509,8 +509,8 @@ std::string HelpMessage(HelpMessageMode mode)
 
 std::string LicenseInfo()
 {
-    const std::string URL_SOURCE_CODE = "<https://github.com/prux/prux>";
-    const std::string URL_WEBSITE = "<https://prux.com>";
+    const std::string URL_SOURCE_CODE = "<https://github.com/BITRY/PRUX-Wallet>";
+    const std::string URL_WEBSITE = "<https://prux.info>";
 
     return CopyrightHolders(strprintf(_("Copyright (C) %i-%i"), 2013, COPYRIGHT_YEAR) + " ") + "\n" +
            "\n" +

@@ -10,6 +10,12 @@
     <height>250</height>
    </rect>
   </property>
+  <property name="font">
+   <font>
+    <family>Roboto</family>
+    <pointsize>10</pointsize>
+   </font>
+  </property>
   <property name="windowTitle">
    <string notr="true">Transaction details</string>
   </property>

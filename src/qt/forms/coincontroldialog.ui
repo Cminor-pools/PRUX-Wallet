@@ -10,6 +10,12 @@
     <height>500</height>
    </rect>
   </property>
+  <property name="font">
+   <font>
+    <family>Roboto</family>
+    <pointsize>10</pointsize>
+   </font>
+  </property>
   <property name="windowTitle">
    <string>Coin Selection</string>
   </property>
@@ -40,6 +46,8 @@
         <widget class="QLabel" name="labelCoinControlQuantityText">
          <property name="font">
           <font>
+           <family>Roboto</family>
+           <pointsize>10</pointsize>
            <weight>75</weight>
            <bold>true</bold>
           </font>
@@ -69,6 +77,8 @@
         <widget class="QLabel" name="labelCoinControlBytesText">
          <property name="font">
           <font>
+           <family>Roboto</family>
+           <pointsize>10</pointsize>
            <weight>75</weight>
            <bold>true</bold>
           </font>
@@ -114,6 +124,8 @@
         <widget class="QLabel" name="labelCoinControlAmountText">
          <property name="font">
           <font>
+           <family>Roboto</family>
+           <pointsize>10</pointsize>
            <weight>75</weight>
            <bold>true</bold>
           </font>
@@ -146,6 +158,8 @@
          </property>
          <property name="font">
           <font>
+           <family>Roboto</family>
+           <pointsize>10</pointsize>
            <weight>75</weight>
            <bold>true</bold>
           </font>
@@ -194,6 +208,8 @@
         <widget class="QLabel" name="labelCoinControlFeeText">
          <property name="font">
           <font>
+           <family>Roboto</family>
+           <pointsize>10</pointsize>
            <weight>75</weight>
            <bold>true</bold>
           </font>
@@ -239,6 +255,8 @@
         <widget class="QLabel" name="labelCoinControlAfterFeeText">
          <property name="font">
           <font>
+           <family>Roboto</family>
+           <pointsize>10</pointsize>
            <weight>75</weight>
            <bold>true</bold>
           </font>
@@ -271,6 +289,8 @@
          </property>
          <property name="font">
           <font>
+           <family>Roboto</family>
+           <pointsize>10</pointsize>
            <weight>75</weight>
            <bold>true</bold>
           </font>

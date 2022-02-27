@@ -295,7 +295,8 @@ RES_ICONS = \
   qt/res/icons/tx_mined.png \
   qt/res/icons/wallet_bgcoin.png \
   qt/res/icons/warning.png \
-  qt/res/icons/verify.png
+  qt/res/icons/verify.png \
+  qt/res/icons/splashscreen.png
 
 BITCOIN_QT_BASE_CPP = \
   qt/bantablemodel.cpp \
@@ -366,12 +367,15 @@ RES_IMAGES =
 RES_MOVIES = $(wildcard $(srcdir)/qt/res/movies/spinner-*.png)
 
 RES_FONTS = \
-  qt/res/fonts/ComicNeue-Bold-Oblique.ttf \
-  qt/res/fonts/ComicNeue-Bold.ttf \
-  qt/res/fonts/ComicNeue-Light-Oblique.ttf \
-  qt/res/fonts/ComicNeue-Light.ttf \
-  qt/res/fonts/ComicNeue-Regular-Oblique.ttf \
-  qt/res/fonts/ComicNeue-Regular.ttf
+  qt/res/fonts/Roboto-BoldItalic.ttf \
+  qt/res/fonts/Roboto-Bold.ttf \
+  qt/res/fonts/Roboto-LightItalic.ttf \
+  qt/res/fonts/Roboto-Light.ttf \
+  qt/res/fonts/Roboto-Regular.ttf \
+  qt/res/fonts/Corbel-BoldItalic.ttf \
+  qt/res/fonts/Corbel-Bold.ttf \
+  qt/res/fonts/Corbel-Regular.ttf \
+  qt/res/fonts/Corbel-RegularItalic.ttf
 
 BITCOIN_RC = qt/res/bitcoin-qt-res.rc
 

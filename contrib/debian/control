@@ -26,9 +26,9 @@ Build-Depends: debhelper,
  python,
  libzmq3-dev
 Standards-Version: 3.9.2
-Homepage: http://www.prux.com/
-Vcs-Git: git://github.com/prux/prux.git
-Vcs-Browser: http://github.com/prux/prux
+Homepage: http://www.prux.info/
+Vcs-Git: git://github.com/BITRY/PRUX-Wallet.git
+Vcs-Browser: http://github.com/BITRY/PRUX-Wallet
 
 Package: pruxd
 Architecture: any

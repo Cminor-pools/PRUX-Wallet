@@ -10,6 +10,12 @@
     <height>380</height>
    </rect>
   </property>
+  <property name="font">
+   <font>
+    <family>Roboto</family>
+    <pointsize>10</pointsize>
+   </font>
+  </property>
   <property name="windowTitle">
    <string>Signatures - Sign / Verify a Message</string>
   </property>
@@ -120,6 +126,8 @@
           <widget class="QLineEdit" name="signatureOut_SM">
            <property name="font">
             <font>
+             <family>Roboto</family>
+             <pointsize>10</pointsize>
              <italic>true</italic>
             </font>
            </property>
@@ -200,6 +208,8 @@
           <widget class="QLabel" name="statusLabel_SM">
            <property name="font">
             <font>
+             <family>Roboto</family>
+             <pointsize>10</pointsize>
              <weight>75</weight>
              <bold>true</bold>
             </font>
@@ -343,6 +353,8 @@
           <widget class="QLabel" name="statusLabel_VM">
            <property name="font">
             <font>
+             <family>Roboto</family>
+             <pointsize>10</pointsize>
              <weight>75</weight>
              <bold>true</bold>
             </font>

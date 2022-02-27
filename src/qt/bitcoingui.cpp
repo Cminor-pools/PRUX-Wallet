@@ -171,16 +171,20 @@ BitcoinGUI::BitcoinGUI(const PlatformStyle *_platformStyle, const NetworkStyle *
     }
 
     // Prux: load fallback font in case Comic Sans is not available on the system
-    QFontDatabase::addApplicationFont(":fonts/ComicNeue-Bold");
-    QFontDatabase::addApplicationFont(":fonts/ComicNeue-Bold-Oblique");
-    QFontDatabase::addApplicationFont(":fonts/ComicNeue-Light");
-    QFontDatabase::addApplicationFont(":fonts/ComicNeue-Light-Oblique");
-    QFontDatabase::addApplicationFont(":fonts/ComicNeue-Regular");
-    QFontDatabase::addApplicationFont(":fonts/ComicNeue-Regular-Oblique");
-    QFont::insertSubstitution("Comic Sans MS", "Comic Neue");
+    QFontDatabase::addApplicationFont(":fonts/Roboto-Bold");
+    QFontDatabase::addApplicationFont(":fonts/Roboto-BoldItalic");
+    QFontDatabase::addApplicationFont(":fonts/Roboto-Light");
+    QFontDatabase::addApplicationFont(":fonts/Roboto-LightItalic");
+    QFontDatabase::addApplicationFont(":fonts/Roboto-Regular");
+    QFontDatabase::addApplicationFont(":fonts/Corbel-Bold");
+    QFontDatabase::addApplicationFont(":fonts/Corbel-BoldItalic");
+    QFontDatabase::addApplicationFont(":fonts/Corbel-Regular");
+    QFontDatabase::addApplicationFont(":fonts/Corbel-RegularItalic");
+
+    QFont::insertSubstitution("Roboto Lt", "Roboto");
 
     // Prux: Specify Comic Sans as new font.
-    QFont newFont("Comic Sans MS", 10);
+    QFont newFont("Roboto Lt", 11);
 
     // Prux: Set new application font
     QApplication::setFont(newFont);
@@ -243,11 +247,11 @@ BitcoinGUI::BitcoinGUI(const PlatformStyle *_platformStyle, const NetworkStyle *
     // Override style sheet for progress bar for styles that have a segmented progress bar,
     // as they make the text unreadable (workaround for issue #1071)
     // See https://qt-project.org/doc/qt-4.8/gallery.html
-    QString curStyle = QApplication::style()->metaObject()->className();
-    if(curStyle == "QWindowsStyle" || curStyle == "QWindowsXPStyle")
-    {
-        progressBar->setStyleSheet("QProgressBar { background-color: #e8e8e8; border: 1px solid grey; border-radius: 7px; padding: 1px; text-align: center; } QProgressBar::chunk { background: QLinearGradient(x1: 0, y1: 0, x2: 1, y2: 0, stop: 0 #FF8000, stop: 1 orange); border-radius: 7px; margin: 0px; }");
-    }
+ //   QString curStyle = QApplication::style()->metaObject()->className();
+ //   if(curStyle == "QWindowsStyle" || curStyle == "QWindowsXPStyle")
+ //   {
+        progressBar->setStyleSheet("QProgressBar { background-color: #474747; font-family: Diversa Sans Com Black, sans-recif; font-weight: normal; max-height: 12px; color: #FFD145; border: 1px solid grey; border-radius: 7px; padding: 1px; text-align: center; } QProgressBar::chunk { background: QLinearGradient(x1: 0, y1: 0, x2: 1, y2: 0, stop: 0 #474747, stop: 1 #818181); border-radius: 7px; margin: 0px; max-height: 12px;  }");
+ //   }
 
     statusBar()->addWidget(progressBarLabel);
     statusBar()->addWidget(progressBar);
@@ -294,14 +298,14 @@ void BitcoinGUI::createActions()
 {
     QActionGroup *tabGroup = new QActionGroup(this);
 
-    overviewAction = new QAction(platformStyle->SingleColorIcon(":/icons/overview"), tr("&YAY"), this);
+    overviewAction = new QAction(platformStyle->SingleColorIcon(":/icons/overview"), tr("&Overview"), this);
     overviewAction->setStatusTip(tr("Show general overview of wallet"));
     overviewAction->setToolTip(overviewAction->statusTip());
     overviewAction->setCheckable(true);
     overviewAction->setShortcut(QKeySequence(Qt::ALT + Qt::Key_1));
     tabGroup->addAction(overviewAction);
 
-    sendCoinsAction = new QAction(platformStyle->SingleColorIcon(":/icons/send"), tr("&PRUX Send"), this);
+    sendCoinsAction = new QAction(platformStyle->SingleColorIcon(":/icons/send"), tr("&Send"), this);
     sendCoinsAction->setStatusTip(tr("Send coins to a Prux address"));
     sendCoinsAction->setToolTip(sendCoinsAction->statusTip());
     sendCoinsAction->setCheckable(true);
@@ -312,7 +316,7 @@ void BitcoinGUI::createActions()
     sendCoinsMenuAction->setStatusTip(sendCoinsAction->statusTip());
     sendCoinsMenuAction->setToolTip(sendCoinsMenuAction->statusTip());
 
-    receiveCoinsAction = new QAction(platformStyle->SingleColorIcon(":/icons/receiving_addresses"), tr("&PRUX Receive"), this);
+    receiveCoinsAction = new QAction(platformStyle->SingleColorIcon(":/icons/receiving_addresses"), tr("&Receive"), this);
     receiveCoinsAction->setStatusTip(tr("Request payments (generates QR codes and prux: URIs)"));
     receiveCoinsAction->setToolTip(receiveCoinsAction->statusTip());
     receiveCoinsAction->setCheckable(true);

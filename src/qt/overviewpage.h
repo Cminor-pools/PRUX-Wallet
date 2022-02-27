@@ -7,7 +7,7 @@
 
 #include "amount.h"
 
-#include <QWidget>
+#include <QLabel>
 #include <memory>
 
 class ClientModel;
@@ -25,12 +25,12 @@ class QModelIndex;
 QT_END_NAMESPACE
 
 /** Overview ("home") page widget */
-class OverviewPage : public QWidget
+class OverviewPage : public QLabel
 {
     Q_OBJECT
 
 public:
-    explicit OverviewPage(const PlatformStyle *platformStyle, QWidget *parent = 0);
+    explicit OverviewPage(const PlatformStyle *platformStyle, QLabel *parent = 0);
     ~OverviewPage();
 
     void setClientModel(ClientModel *clientModel);

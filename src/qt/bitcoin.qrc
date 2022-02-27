@@ -56,6 +56,10 @@
         <file alias="wallet_bgcoin">res/icons/wallet_bgcoin.png</file>
         <file alias="paper_wallet">res/icons/paper_wallet.png</file>
         <file alias="print">res/icons/print.png</file>
+        <file alias="splashscreen">res/icons/splashscreen.png</file>
+        <file alias="overview_background">res/icons/overview_background.png</file>
+        <file alias="modal_background">res/icons/modal_background.png</file>
+        <file alias="sendcoin_background">res/icons/sendcoin_background.png</file>
     </qresource>
     <qresource prefix="/movies">
         <file alias="spinner-000">res/movies/spinner-000.png</file>
@@ -96,11 +100,14 @@
         <file alias="spinner-035">res/movies/spinner-035.png</file>
     </qresource>
     <qresource prefix="/fonts">
-        <file alias="ComicNeue-Bold">res/fonts/ComicNeue-Bold.ttf</file>
-        <file alias="ComicNeue-Bold-Oblique">res/fonts/ComicNeue-Bold-Oblique.ttf</file>
-        <file alias="ComicNeue-Light">res/fonts/ComicNeue-Light.ttf</file>
-        <file alias="ComicNeue-Light-Oblique">res/fonts/ComicNeue-Light-Oblique.ttf</file>
-        <file alias="ComicNeue-Regular">res/fonts/ComicNeue-Regular.ttf</file>
-        <file alias="ComicNeue-Regular-Oblique">res/fonts/ComicNeue-Regular-Oblique.ttf</file>
+        <file alias="Roboto-Bold">res/fonts/Roboto-Bold.ttf</file>
+        <file alias="Roboto-BoldItalic">res/fonts/Roboto-BoldItalic.ttf</file>
+        <file alias="Roboto-Light">res/fonts/Roboto-Light.ttf</file>
+        <file alias="Roboto-LightItalic">res/fonts/Roboto-LightItalic.ttf</file>
+        <file alias="Roboto-Regular">res/fonts/Roboto-Regular.ttf</file>
+        <file alias="Corbel-Bold">res/fonts/Corbel-Bold.ttf</file>
+        <file alias="Corbel-BoldItalic">res/fonts/Corbel-BoldItalic.ttf</file>
+        <file alias="Corbel-Regular">res/fonts/Corbel-Regular.ttf</file>
+        <file alias="Corbel-Regular">res/fonts/Corbel-RegularItalic.ttf</file>
     </qresource>
 </RCC>
