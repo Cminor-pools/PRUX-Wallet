@@ -1,6 +1,6 @@
-Prux Core version 1.14.3 is now available from:
+Prux Core version 3.0.0 is now available from:
 
-  <https://github.com/BITRY/PRUX-Wallet/releases/tag/v1.14.3/>
+  <https://github.com/BITRY/PRUX-Wallet/releases/tag/v3.0.0/>
 
 This is a new minor version release, including various bugfixes and performance improvements. It is a recommended
 update for all users.
@@ -12,13 +12,13 @@ Please report bugs using the issue tracker at github:
 To receive security and update notifications, please watch reddit or Twitter:
 
   * https://www.reddit.com/r/prux/
-  * @Prux on Twitter for high priority announcements
-  * @prux\_devs on Twitter for updates on development work
+  * @PruxC on Twitter for high priority announcements
+  * @PruxC\_devs on Twitter for updates on development work
 
 The developers also maintain personal Twitter accounts:
 
-  * @langer\_hans
-  * @JRossNicoll
+  * @PruxC
+
 
 Compatibility
 ==============
