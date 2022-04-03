@@ -221,6 +221,8 @@ public:
             18686334,
             1.000000
         };
+        nMaxReorganizationDepth = 8; // 8 at 9 minute block timespan is +/- 71 seconds.
+        nMinReorganizationPeers = 3;
     }
 };
 static CMainParams mainParams;
