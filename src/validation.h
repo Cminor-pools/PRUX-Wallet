@@ -92,9 +92,9 @@ static const unsigned int BLOCK_STALLING_TIMEOUT = 2;
 static const unsigned int MAX_HEADERS_RESULTS = 2000;
 /** Maximum depth of blocks we're willing to serve as compact blocks to peers
  *  when requested. For older blocks, a regular BLOCK response will be sent. */
-static const int MAX_CMPCTBLOCK_DEPTH = 25;
+static const int MAX_CMPCTBLOCK_DEPTH = 50;
 /** Maximum depth of blocks we're willing to respond to GETBLOCKTXN requests for. */
-static const int MAX_BLOCKTXN_DEPTH = 10;
+static const int MAX_BLOCKTXN_DEPTH = 500;
 /** Size of the "block download window": how far ahead of our current height do we fetch?
  *  Larger windows tolerate larger download speed differences between peer, but increase the potential
  *  degree of disordering of blocks on disk (which make reindexing and in the future perhaps pruning
@@ -121,9 +121,9 @@ static const unsigned int AVG_FEEFILTER_BROADCAST_INTERVAL = 10 * 60;
 /** Maximum feefilter broadcast delay after significant change. */
 static const unsigned int MAX_FEEFILTER_CHANGE_DELAY = 5 * 60;
 /** Block download timeout base, expressed in millionths of the block interval (i.e. 10 min) */
-static const int64_t BLOCK_DOWNLOAD_TIMEOUT_BASE = 10000000;
+static const int64_t BLOCK_DOWNLOAD_TIMEOUT_BASE = 5000000;
 /** Additional block download timeout per parallel downloading peer (i.e. 5 min) */
-static const int64_t BLOCK_DOWNLOAD_TIMEOUT_PER_PEER = 5000000;
+static const int64_t BLOCK_DOWNLOAD_TIMEOUT_PER_PEER = 2500000;
 
 static const unsigned int DEFAULT_LIMITFREERELAY = 0;
 static const bool DEFAULT_RELAYPRIORITY = true;

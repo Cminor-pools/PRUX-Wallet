@@ -727,7 +727,25 @@ void Misbehaving(NodeId pnode, int howmuch)
         LogPrintf("%s: %s peer=%d (%d -> %d)\n", __func__, state->name, pnode, state->nMisbehavior-howmuch, state->nMisbehavior);
 }
 
+// Prux -  1.14 specific fix: do not request headers from a peer we are
+//             already requesting headers from, unless forced.
+void RequestHeadersFrom(CNode* pto, CConnman& connman, const CBlockIndex* pindex, uint256 untilHash, bool fforceQuery)
+{
+  if (pto->nPendingHeaderRequests > 0) {
+    if (fforceQuery) {
+      LogPrint("net", "forcing getheaders request (%d) to peer=%d (%d open)\n",
+                pindex->nHeight, pto->id, pto->nPendingHeaderRequests);
+    } else {
+      LogPrint("net", "dropped getheaders request (%d) to peer=%d\n", pindex->nHeight, pto->id);
+      return;
+    }
+  }
 
+  const CNetMsgMaker msgMaker(pto->GetSendVersion());
+  connman.PushMessage(pto, msgMaker.Make(NetMsgType::GETHEADERS, chainActive.GetLocator(pindex), untilHash));
+  pto->nPendingHeaderRequests += 1;
+
+}
 
 
 
@@ -1558,7 +1576,9 @@ bool static ProcessMessage(CNode* pfrom, const std::string& strCommand, CDataStr
                     // fell back to inv we probably have a reorg which we should get the headers for first,
                     // we now only provide a getheaders response here. When we receive the headers, we will
                     // then ask for the blocks we need.
-                    connman.PushMessage(pfrom, msgMaker.Make(NetMsgType::GETHEADERS, chainActive.GetLocator(pindexBestHeader), inv.hash));
+                    /// connman.PushMessage(pfrom, msgMaker.Make(NetMsgType::GETHEADERS, chainActive.GetLocator(pindexBestHeader), inv.hash));
+                    // Prux: We force this check, in case we're only connected to nodes that send invs
+                    RequestHeadersFrom(pfrom, connman, pindexBestHeader, inv.hash, true);
                     LogPrint("net", "getheaders (%d) %s to peer=%d\n", pindexBestHeader->nHeight, inv.hash.ToString(), pfrom->id);
                 }
             }
@@ -1966,7 +1986,8 @@ bool static ProcessMessage(CNode* pfrom, const std::string& strCommand, CDataStr
         if (mapBlockIndex.find(cmpctblock.header.hashPrevBlock) == mapBlockIndex.end()) {
             // Doesn't connect (or is genesis), instead of DoSing in AcceptBlockHeader, request deeper headers
             if (!IsInitialBlockDownload())
-                connman.PushMessage(pfrom, msgMaker.Make(NetMsgType::GETHEADERS, chainActive.GetLocator(pindexBestHeader), uint256()));
+                ///connman.PushMessage(pfrom, msgMaker.Make(NetMsgType::GETHEADERS, chainActive.GetLocator(pindexBestHeader), uint256()));
+                RequestHeadersFrom(pfrom, connman, pindexBestHeader, uint256(), true);
             return true;
         }
         }
@@ -2223,6 +2244,9 @@ bool static ProcessMessage(CNode* pfrom, const std::string& strCommand, CDataStr
     {
         std::vector<CBlockHeader> headers;
 
+        if (pfrom->nPendingHeaderRequests > 0)
+          pfrom->nPendingHeaderRequests -= 1;
+
         // Bypass the normal CBlock deserialization, as we don't want to risk deserializing 2000 full blocks.
         unsigned int nCount = ReadCompactSize(vRecv);
         if (nCount > MAX_HEADERS_RESULTS) {
@@ -2256,7 +2280,9 @@ bool static ProcessMessage(CNode* pfrom, const std::string& strCommand, CDataStr
         //   nUnconnectingHeaders gets reset back to 0.
         if (mapBlockIndex.find(headers[0].hashPrevBlock) == mapBlockIndex.end() && nCount < MAX_BLOCKS_TO_ANNOUNCE) {
             nodestate->nUnconnectingHeaders++;
-            connman.PushMessage(pfrom, msgMaker.Make(NetMsgType::GETHEADERS, chainActive.GetLocator(pindexBestHeader), uint256()));
+            ///connman.PushMessage(pfrom, msgMaker.Make(NetMsgType::GETHEADERS, chainActive.GetLocator(pindexBestHeader), uint256()));
+            // Prux: allow a single getheaders query before triggering DoS
+            RequestHeadersFrom(pfrom, connman, pindexBestHeader, uint256(), true);
             LogPrint("net", "received header %s: missing prev block %s, sending getheaders (%d) to end (peer=%d, nUnconnectingHeaders=%d)\n",
                     headers[0].GetHash().ToString(),
                     headers[0].hashPrevBlock.ToString(),
@@ -2310,8 +2336,13 @@ bool static ProcessMessage(CNode* pfrom, const std::string& strCommand, CDataStr
             // Headers message had its maximum size; the peer may have more headers.
             // TODO: optimize: if pindexLast is an ancestor of chainActive.Tip or pindexBestHeader, continue
             // from there instead.
+	    //
+            // Prux: do not allow multiple getheader queries in parallel at
+            // this point - makes sure that any parallel queries will end here,
+            // preventing "getheaders" spam.
             LogPrint("net", "more getheaders (%d) to end to peer=%d (startheight:%d)\n", pindexLast->nHeight, pfrom->id, pfrom->nStartingHeight);
-            connman.PushMessage(pfrom, msgMaker.Make(NetMsgType::GETHEADERS, chainActive.GetLocator(pindexLast), uint256()));
+            ///connman.PushMessage(pfrom, msgMaker.Make(NetMsgType::GETHEADERS, chainActive.GetLocator(pindexLast), uint256()));
+            RequestHeadersFrom(pfrom, connman, pindexLast, uint256(), false);
         }
 
         bool fCanDirectFetch = CanDirectFetch(chainparams.GetConsensus(0));
@@ -2909,10 +2940,14 @@ bool SendMessages(CNode* pto, CConnman& connman, const std::atomic<bool>& interr
                    the peer's known best block.  This wouldn't be possible
                    if we requested starting at pindexBestHeader and
                    got back an empty response.  */
+		// Prux: make sure that if we are already processing an inv
+                // or header message from this peer caused by a new block being
+                // mined at chaintip, we do not send another getheaders request
                 if (pindexStart->pprev)
                     pindexStart = pindexStart->pprev;
                 LogPrint("net", "initial getheaders (%d) to peer=%d (startheight:%d)\n", pindexStart->nHeight, pto->id, pto->nStartingHeight);
-                connman.PushMessage(pto, msgMaker.Make(NetMsgType::GETHEADERS, chainActive.GetLocator(pindexStart), uint256()));
+                /// connman.PushMessage(pto, msgMaker.Make(NetMsgType::GETHEADERS, chainActive.GetLocator(pindexStart), uint256()));
+                RequestHeadersFrom(pto, connman, pindexStart, uint256(), false);
             }
         }
 
